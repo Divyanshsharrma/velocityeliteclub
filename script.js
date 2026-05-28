@@ -1,52 +1,35 @@
-// Intro animation and main content transition
+// Splash screen animation and main content transition
 document.addEventListener('DOMContentLoaded', function() {
-    const introContainer = document.getElementById('intro-container');
-    const introVideo = document.getElementById('intro-video');
+    const splashScreen = document.getElementById('splash-screen');
     const mainContent = document.getElementById('main-content');
     
-    // Set intro video to play only once
-    introVideo.loop = false;
-    
-    // Handle video end and transition
-    function handleVideoEnd() {
-        // Wait 0.08 seconds after video ends before starting fade out
-        setTimeout(() => {
+    // Only run splash screen logic if elements exist (index.html only)
+    if (splashScreen && mainContent) {
+        // Prevent scrolling during splash screen
+        document.body.classList.add('splash-active');
+        
+        // Handle splash screen fade out and transition
+        function handleSplashScreenEnd() {
             // Start fade out
-            introContainer.classList.add('fade-out');
+            splashScreen.classList.add('fade-out');
             
             // Show main content after fade starts
             setTimeout(() => {
                 mainContent.classList.add('visible');
-            }, 500);
+            }, 300);
             
-            // Hide intro container completely after fade
+            // Hide splash screen completely after fade and re-enable scrolling
             setTimeout(() => {
-                introContainer.style.display = 'none';
-            }, 1500);
-        }, 80); // 0.08 second delay before fade out
-    }
-    
-    // Fallback timer in case video doesn't load properly
-    const fallbackTimer = setTimeout(() => {
-        if (!introContainer.classList.contains('fade-out')) {
-            handleVideoEnd();
+                splashScreen.style.display = 'none';
+                document.body.classList.remove('splash-active');
+            }, 1000);
         }
-    }, 7000); // 7 seconds fallback (increased from 5)
-    
-    // Listen for video end
-    introVideo.addEventListener('ended', handleVideoEnd);
-    
-    // Clear fallback timer if video ends naturally
-    introVideo.addEventListener('ended', () => {
-        clearTimeout(fallbackTimer);
-    });
-    
-    // Handle video loading errors
-    introVideo.addEventListener('error', () => {
-        console.log('Video loading error, using fallback timer');
-        clearTimeout(fallbackTimer);
-        setTimeout(handleVideoEnd, 1000);
-    });
+        
+        // Show splash screen for 2.5 seconds then transition
+        setTimeout(() => {
+            handleSplashScreenEnd();
+        }, 2500);
+    }
 });
 
 // Scroll animations for feature sections
@@ -108,6 +91,7 @@ window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
     const heroContent = document.querySelector('.hero-content');
     
+    // Only apply parallax if hero content exists (index.html only)
     if (heroContent && scrolled < window.innerHeight) {
         const speed = 0.5;
         heroContent.style.transform = `translateY(${scrolled * speed}px)`;
@@ -124,4 +108,134 @@ document.querySelectorAll('.footer-link').forEach(link => {
     link.addEventListener('mouseleave', function() {
         this.style.textShadow = '';
     });
+});
+
+// Mobile Navigation Toggle
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const navMenu = document.getElementById('navMenu');
+
+if (mobileMenuBtn && navMenu) {
+    mobileMenuBtn.addEventListener('click', function() {
+        navMenu.classList.toggle('active');
+        
+        // Animate hamburger menu
+        const spans = this.querySelectorAll('span');
+        if (navMenu.classList.contains('active')) {
+            spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+            spans[1].style.opacity = '0';
+            spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+        } else {
+            spans[0].style.transform = '';
+            spans[1].style.opacity = '1';
+            spans[2].style.transform = '';
+        }
+    });
+    
+    // Close mobile menu when clicking on a link
+    navMenu.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', function() {
+            navMenu.classList.remove('active');
+            const spans = mobileMenuBtn.querySelectorAll('span');
+            spans[0].style.transform = '';
+            spans[1].style.opacity = '1';
+            spans[2].style.transform = '';
+        });
+    });
+}
+
+// Smooth Scrolling for Navigation Links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        
+        // Skip if it's just "#"
+        if (href === '#') return;
+        
+        const target = document.querySelector(href);
+        if (target) {
+            e.preventDefault();
+            
+            // Calculate offset for fixed navbar
+            const navbarHeight = document.querySelector('.navbar')?.offsetHeight || 0;
+            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+            
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
+
+// Handle cross-page anchor navigation with smooth scrolling
+window.addEventListener('load', function() {
+    const hash = window.location.hash;
+    if (hash) {
+        const target = document.querySelector(hash);
+        if (target) {
+            // Calculate offset for fixed navbar
+            const navbarHeight = document.querySelector('.navbar')?.offsetHeight || 0;
+            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+            
+            // Smooth scroll to the target
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+        }
+    }
+});
+
+// Scroll Animations for New Sections
+function handleNewSectionAnimations() {
+    const observerOptions = {
+        threshold: 0.2,
+        rootMargin: '0px 0px -100px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+                // Add staggered animation delay
+                setTimeout(() => {
+                    entry.target.classList.add('animate');
+                }, index * 100);
+            }
+        });
+    }, observerOptions);
+    
+    // Observe about section elements
+    const aboutText = document.querySelector('.about-text');
+    const aboutImage = document.querySelector('.about-image');
+    if (aboutText) observer.observe(aboutText);
+    if (aboutImage) observer.observe(aboutImage);
+    
+    // Observe facility cards
+    const facilityCards = document.querySelectorAll('.facility-card');
+    facilityCards.forEach((card, index) => {
+        card.style.transitionDelay = `${index * 100}ms`;
+        observer.observe(card);
+    });
+    
+    // Observe membership cards
+    const membershipCards = document.querySelectorAll('.membership-card');
+    membershipCards.forEach((card, index) => {
+        card.style.transitionDelay = `${index * 100}ms`;
+        observer.observe(card);
+    });
+}
+
+// Initialize new section animations
+document.addEventListener('DOMContentLoaded', handleNewSectionAnimations);
+
+// Navbar Background on Scroll
+window.addEventListener('scroll', function() {
+    const navbar = document.querySelector('.navbar');
+    if (navbar) {
+        if (window.scrollY > 50) {
+            navbar.style.background = 'rgba(0, 0, 0, 0.98)';
+        } else {
+            navbar.style.background = 'rgba(0, 0, 0, 0.9)';
+        }
+    }
 });
