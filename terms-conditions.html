@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms & Conditions - Velocity Elite Club</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        .terms-page {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #000 0%, #0a0a0a 50%, #000 100%);
+            padding: 100px 20px 60px;
+        }
+        
+        .terms-header {
+            text-align: center;
+            margin-bottom: 60px;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .terms-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 700;
+            color: #00d4ff;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+        }
+        
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(0, 212, 255, 0.1);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            color: #00d4ff;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 30px;
+        }
+        
+        .back-button:hover {
+            background: rgba(0, 212, 255, 0.2);
+            border-color: #00d4ff;
+            transform: translateX(-5px);
+        }
+        
+        .terms-content {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 20px;
+            padding: 50px 40px;
+        }
+        
+        .terms-section {
+            margin-bottom: 40px;
+        }
+        
+        .terms-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .section-heading {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #00d4ff;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 20px;
+        }
+        
+        .terms-text {
+            color: #ccc;
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            font-weight: 300;
+        }
+        
+        .terms-list {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0;
+        }
+        
+        .terms-list li {
+            color: #ccc;
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .terms-list li::before {
+            content: '•';
+            color: #00d4ff;
+            position: absolute;
+            left: 0;
+            font-weight: 700;
+        }
+        
+        .update-date {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+        
+        @media (max-width: 768px) {
+            .terms-page {
+                padding: 80px 20px 40px;
+            }
+            
+            .terms-content {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html" class="logo-link">
+                    <img src="logo.png" alt="Velocity Elite Club" class="logo-image">
+                </a>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html#home" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">About Us</a></li>
+                <li><a href="index.html#gym" class="nav-link">Gym</a></li>
+                <li><a href="index.html#pool" class="nav-link">Swimming Pool</a></li>
+                <li><a href="index.html#facilities" class="nav-link">Facilities</a></li>
+                <li><a href="index.html#membership" class="nav-link">Membership</a></li>
+                <li><a href="index.html#booking" class="nav-link">Booking</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="terms-page">
+        <div class="terms-header">
+            <a href="index.html" class="back-button">← Back to Home</a>
+            <h1 class="terms-title">Terms & Conditions</h1>
+        </div>
+        
+        <div class="terms-content">
+            <p class="update-date">Last Updated: January 1, 2026</p>
+            
+            <div class="terms-section">
+                <h2 class="section-heading">1. Acceptance of Terms</h2>
+                <p class="terms-text">
+                    By accessing and using Velocity Elite Club's website, facilities, and services, you agree to be bound by these Terms & Conditions. If you do not agree with these terms, please do not use our services.
+                </p>
+            </div>
+            
+            <div class="terms-section">
+                <h2 class="section-heading">2. Membership Terms</h2>
+                <p class="terms-text">All memberships are subject to the following terms:</p>
+                <ul class="terms-list">
+                    <li>Membership fees are non-refundable unless specified otherwise</li>
+                    <li>Membership is personal and non-transferable</li>
+                    <li>Valid government-issued ID is required for registration</li>
+                    <li>Members must be at least 18 years old (or accompanied by a guardian)</li>
+                    <li>Medical clearance may be required for certain activities</li>
+                    <li>Membership auto-renews unless cancelled in writing 30 days before expiry</li>
+                </ul>
+            </div>
+            
+            <div class="terms-section">
+                <h2 class="section-heading">3. Facility Rules & Regulations</h2>
+                <p class="terms-text">All members and guests must adhere to the following rules:</p>
+                <ul class="terms-list">
+                    <li><strong>Attire:</strong> Proper athletic attire and footwear must be worn at all times in the gym</li>
+                    <li><strong>Swimming Pool:</strong> Proper swimwear is mandatory. Shower before entering the pool</li>
+                    <li><strong>Equipment:</strong> Use equipment properly and return after use. Do not drop weights</li>
+                    <li><strong>Hygiene:</strong> Wipe down equipment after use. Maintain personal hygiene</li>
+                    <li><strong>Behavior:</strong> Respect other members and staff. No harassment or inappropriate behavior</li>
+                    <li><strong>Prohibited Items:</strong> No outside food, alcohol, or illegal substances on premises</li>
+                    <li><strong>Photography:</strong> No photography or videography without prior permission</li>
+                </ul>
+            </div>
+            
+            <div class="terms-section">
+                <h2 class="section-heading">4. Booking & Reservation</h2>
+                <p class="terms-text">Booking policies include:</p>
+                <ul class="terms-list">
+                    <li>Bookings must be made at least 24 hours in advance</li>
+                    <li>Cancellations must be made at least 12 hours before the scheduled time</li>
+                    <li>No-shows may result in booking restrictions</li>
+                    <li>Peak hours may have limited availability</li>
+                    <li>Personal training sessions require 24-hour cancellation notice</li>
+                </ul>
+            </div>
+            
+            <div class="terms-section">
+                <h2 class="section-heading">5. Payment Terms</h2>
+                <p class="terms-text">Payment policies include:</p>
+                <ul class="terms-list">
+                    <li>All payments are processed through Razorpay secure payment gateway</li>
+                    <li>Membership fees are payable in advance (monthly, quarterly, or annually)</li>
+                    <li>Late payments may incur a penalty fee</li>
+                    <li>Prices are subject to change with 30 days notice</li>
+                    <li>EMI options available for annual memberships</li>
+                </ul>
+            </div>
+            
+            <div class="terms-section">
+                <h2 class="section-heading">6. Health & Safety</h2>
+                <p class="terms-text">To ensure a safe environment:</p>
+                <ul class="terms-list">
+                    <li>Members must disclose any medical conditions that may affect their participation</li>
+                    <li>Consult a physician before starting any fitness program</li>
+                    <li>Use equipment within your physical capabilities</li>
+                    <li>Report any injuries or incidents to staff immediately</li>
+                    <li>Emergency procedures must be followed at all times</li>
+                    <li>Staff reserves the right to prohibit activities deemed unsafe</li>
+                </ul>
+            </div>
+            
+            <div class="terms-section">
+                <h2 class="section-heading">7. Locker Room & Personal Property</h2>
+                <p class="terms-text">Regarding lockers and personal items:</p>
+                <ul class="terms-list">
+                    <li>Lockers are for day use only unless otherwise specified</li>
+                    <li>Members must provide their own locks or rent from reception</li>
+                    <li>Velocity Elite Club is not responsible for lost or stolen items</li>
+                    <li>Personal belongings left overnight will be removed after 48 hours</li>
+                    <li>Valuables should not be brought to the facility</li>
+                </ul>
+            </div>
+            
+            <div class="terms-section">
+                <h2 class="section-heading">8. Suspension & Termination</h2>
+                <p class="terms-text">We reserve the right to suspend or terminate membership for:</p>
+                <ul class="terms-list">
+                    <li>Violation of club rules and regulations</li>
+                    <li>Non-payment of fees</li>
+                    <li>Inappropriate behavior towards staff or members</li>
+                    <li>Misuse of facilities or equipment</li>
+                    <li>Fraudulent activity or false information provided</li>
+                </ul>
+            </div>
+            
+            <div class="terms-section">
+                <h2 class="section-heading">9. Limitation of Liability</h2>
+                <p class="terms-text">
+                    Velocity Elite Club is not liable for any injuries, damages, or losses sustained by members or guests while using our facilities, except where caused by our negligence. Members participate in all activities at their own risk.
+                </p>
+            </div>
+            
+            <div class="terms-section">
+                <h2 class="section-heading">10. Intellectual Property</h2>
+                <p class="terms-text">
+                    All content on our website, including text, images, logos, and designs, is the property of Velocity Elite Club and protected by copyright laws. Unauthorized use is prohibited.
+                </p>
+            </div>
+            
+            <div class="terms-section">
+                <h2 class="section-heading">11. Modifications to Terms</h2>
+                <p class="terms-text">
+                    We reserve the right to modify these terms at any time. Changes will be posted on our website with the updated date. Continued use of our services constitutes acceptance of modified terms.
+                </p>
+            </div>
+            
+            <div class="terms-section">
+                <h2 class="section-heading">12. Governing Law</h2>
+                <p class="terms-text">
+                    These terms are governed by the laws of India. Any disputes shall be subject to the exclusive jurisdiction of the courts in [Your City], India.
+                </p>
+            </div>
+            
+            <div class="terms-section">
+                <h2 class="section-heading">13. Contact Information</h2>
+                <p class="terms-text">
+                    For any questions regarding these Terms & Conditions, please contact us at:
+                </p>
+                <p class="terms-text">
+                    <strong>Phone:</strong> 9548651997<br>
+                    <strong>Address:</strong> Main Road Chandra Lok Colony, Khurja, Uttar Pradesh
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>VELOCITY ELITE CLUB</h3>
+                    <p>Premium Gym & Swimming Pool Experience</p>
+                    <div class="footer-contact">
+                        <p><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 8px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>Main Road Chandra Lok Colony, Khurja, Uttar Pradesh</p>
+                        <p><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 8px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>9548651997</p>
+                    </div>
+                </div>
+                <div class="footer-links-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#home" class="footer-link">Home</a></li>
+                        <li><a href="index.html#about" class="footer-link">About Us</a></li>
+                        <li><a href="index.html#gym" class="footer-link">Gym</a></li>
+                        <li><a href="index.html#pool" class="footer-link">Swimming Pool</a></li>
+                        <li><a href="index.html#facilities" class="footer-link">Facilities</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-section">
+                    <h4>Membership</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#membership" class="footer-link">Gym Plans</a></li>
+                        <li><a href="index.html#membership" class="footer-link">Pool Plans</a></li>
+                        <li><a href="index.html#membership" class="footer-link">Combo Plans</a></li>
+                        <li><a href="index.html#booking" class="footer-link">Book Trial</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-section">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="privacy-policy.html" class="footer-link">Privacy Policy</a></li>
+                        <li><a href="terms-conditions.html" class="footer-link">Terms & Conditions</a></li>
+                        <li><a href="refund-policy.html" class="footer-link">Refund Policy</a></li>
+                        <li><a href="contact.html" class="footer-link">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-social">
+                    <a href="#" class="social-link">Facebook</a>
+                    <a href="#" class="social-link">Instagram</a>
+                    <a href="#" class="social-link">Twitter</a>
+                    <a href="#" class="social-link">YouTube</a>
+                </div>
+                <p class="footer-copyright">&copy; 2026 Velocity Elite Club. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>

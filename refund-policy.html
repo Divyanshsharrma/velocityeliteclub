@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refund & Cancellation Policy - Velocity Elite Club</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        .refund-page {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #000 0%, #0a0a0a 50%, #000 100%);
+            padding: 100px 20px 60px;
+        }
+        
+        .refund-header {
+            text-align: center;
+            margin-bottom: 60px;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .refund-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 700;
+            color: #00d4ff;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+        }
+        
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(0, 212, 255, 0.1);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            color: #00d4ff;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 30px;
+        }
+        
+        .back-button:hover {
+            background: rgba(0, 212, 255, 0.2);
+            border-color: #00d4ff;
+            transform: translateX(-5px);
+        }
+        
+        .refund-content {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 20px;
+            padding: 50px 40px;
+        }
+        
+        .refund-section {
+            margin-bottom: 40px;
+        }
+        
+        .refund-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .section-heading {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #00d4ff;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 20px;
+        }
+        
+        .refund-text {
+            color: #ccc;
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            font-weight: 300;
+        }
+        
+        .refund-list {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0;
+        }
+        
+        .refund-list li {
+            color: #ccc;
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .refund-list li::before {
+            content: '•';
+            color: #00d4ff;
+            position: absolute;
+            left: 0;
+            font-weight: 700;
+        }
+        
+        .highlight-box {
+            background: rgba(0, 212, 255, 0.1);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+        
+        .highlight-box h4 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #00d4ff;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .highlight-box p {
+            color: #ccc;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+        
+        .update-date {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+        
+        @media (max-width: 768px) {
+            .refund-page {
+                padding: 80px 20px 40px;
+            }
+            
+            .refund-content {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html" class="logo-link">
+                    <img src="logo.png" alt="Velocity Elite Club" class="logo-image">
+                </a>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html#home" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">About Us</a></li>
+                <li><a href="index.html#gym" class="nav-link">Gym</a></li>
+                <li><a href="index.html#pool" class="nav-link">Swimming Pool</a></li>
+                <li><a href="index.html#facilities" class="nav-link">Facilities</a></li>
+                <li><a href="index.html#membership" class="nav-link">Membership</a></li>
+                <li><a href="index.html#booking" class="nav-link">Booking</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="refund-page">
+        <div class="refund-header">
+            <a href="index.html" class="back-button">← Back to Home</a>
+            <h1 class="refund-title">Refund & Cancellation Policy</h1>
+        </div>
+        
+        <div class="refund-content">
+            <p class="update-date">Last Updated: January 1, 2026</p>
+            
+            <div class="refund-section">
+                <h2 class="section-heading">1. Membership Cancellation</h2>
+                <p class="refund-text">Members may cancel their membership under the following conditions:</p>
+                <ul class="refund-list">
+                    <li><strong>Monthly Memberships:</strong> 30 days written notice required for cancellation</li>
+                    <li><strong>Quarterly Memberships:</strong> 30 days written notice required for cancellation</li>
+                    <li><strong>Annual Memberships:</strong> No refunds within first 3 months. After 3 months, pro-rated refund available with 30 days notice</li>
+                    <li>Cancellation requests must be submitted in writing via email or in person at the reception</li>
+                    <li>Membership remains active until the notice period ends</li>
+                </ul>
+            </div>
+            
+            <div class="refund-section">
+                <h2 class="section-heading">2. Membership Refunds</h2>
+                <div class="highlight-box">
+                    <h4>Refund Eligibility</h4>
+                    <p>Refunds are processed within 7-10 business days to the original payment method. Processing fees may apply.</p>
+                </div>
+                <ul class="refund-list">
+                    <li><strong>Medical Reasons:</strong> Full refund with medical documentation and doctor's recommendation</li>
+                    <li><strong>Relocation:</strong> Pro-rated refund with proof of relocation (more than 50km away)</li>
+                    <li><strong>Service Discontinuation:</strong> Full refund if we discontinue services permanently</li>
+                    <li><strong>Annual Memberships:</strong> Pro-rated refund after 3 months of active membership</li>
+                    <li><strong>Joining Fee:</strong> Non-refundable under any circumstances</li>
+                </ul>
+            </div>
+            
+            <div class="refund-section">
+                <h2 class="section-heading">3. Booking Cancellations</h2>
+                <p class="refund-text">Cancellation policies for bookings and sessions:</p>
+                <ul class="refund-list">
+                    <li><strong>Personal Training:</strong> 24-hour notice required for cancellation or rescheduling</li>
+                    <li><strong>Pool Sessions:</strong> 12-hour notice required for cancellation</li>
+                    <li><strong>Group Classes:</strong> 4-hour notice required for cancellation</li>
+                    <li><strong>No-show Policy:</strong> No refund or rescheduling for no-shows</li>
+                    <li><strong>Late Cancellations:</strong> May incur a 50% charge of the session fee</li>
+                </ul>
+            </div>
+            
+            <div class="refund-section">
+                <h2 class="section-heading">4. Free Trial Cancellations</h2>
+                <p class="refund-text">Free trial bookings can be cancelled:</p>
+                <ul class="refund-list">
+                    <li>Up to 4 hours before the scheduled trial session</li>
+                    <li>By calling our reception or sending an email</li>
+                    <li>No penalty for cancelling free trials</li>
+                    <li>Multiple no-shows may disqualify from future free trials</li>
+                </ul>
+            </div>
+            
+            <div class="refund-section">
+                <h2 class="section-heading">5. Membership Freeze Policy</h2>
+                <div class="highlight-box">
+                    <h4>Freeze Your Membership</h4>
+                    <p>Members can freeze their membership for up to 30 days per year for valid reasons.</p>
+                </div>
+                <ul class="refund-list">
+                    <li><strong>Medical Freeze:</strong> Up to 60 days with medical documentation</li>
+                    <li><strong>Travel Freeze:</strong> Up to 30 days with travel proof</li>
+                    <li><strong>Personal Reasons:</strong> Up to 15 days per year</li>
+                    <li>Freeze request must be submitted before the freeze period begins</li>
+                    <li>Membership fees continue during freeze period at 50% rate</li>
+                    <li>Maximum 2 freeze requests per year</li>
+                </ul>
+            </div>
+            
+            <div class="refund-section">
+                <h2 class="section-heading">6. Payment Disputes</h2>
+                <p class="refund-text">In case of payment disputes:</p>
+                <ul class="refund-list">
+                    <li>Contact our billing department within 7 days of the transaction</li>
+                    <li>Provide transaction details and reason for dispute</li>
+                    <li>We will investigate and respond within 5 business days</li>
+                    <li>Valid disputes will be resolved with full refund</li>
+                    <li>Frivolous disputes may result in membership review</li>
+                </ul>
+            </div>
+            
+            <div class="refund-section">
+                <h2 class="section-heading">7. Refund Method</h2>
+                <p class="refund-text">Refunds are processed as follows:</p>
+                <ul class="refund-list">
+                    <li>Refunds are issued to the original payment method</li>
+                    <li>Processing time: 7-10 business days</li>
+                    <li>Bank transfers may take additional 3-5 business days</li>
+                    <li>Credit card refunds depend on your bank's processing time</li>
+                    <li>Refund confirmation will be sent via email</li>
+                </ul>
+            </div>
+            
+            <div class="refund-section">
+                <h2 class="section-heading">8. Non-Refundable Items</h2>
+                <p class="refund-text">The following items are non-refundable:</p>
+                <ul class="refund-list">
+                    <li>Joining/Registration fees</li>
+                    <li>Administrative fees</li>
+                    <li>Locker rental fees</li>
+                    <li>Purchased merchandise (unless defective)</li>
+                    <li>Consumable items (supplements, drinks, etc.)</li>
+                    <li>Special event bookings</li>
+                </ul>
+            </div>
+            
+            <div class="refund-section">
+                <h2 class="section-heading">9. Exceptional Circumstances</h2>
+                <p class="refund-text">
+                    Velocity Elite Club reserves the right to make exceptions to this policy in exceptional circumstances on a case-by-case basis. Such decisions are at the sole discretion of management.
+                </p>
+            </div>
+            
+            <div class="refund-section">
+                <h2 class="section-heading">10. How to Request a Refund</h2>
+                <p class="refund-text">To request a refund or cancellation:</p>
+                <ul class="refund-list">
+                    <li>Send an email to: refunds@velocityelite.com</li>
+                    <li>Visit our reception desk in person</li>
+                    <li>Call our billing department: +91 98765 43210</li>
+                    <li>Include your membership ID, contact details, and reason for request</li>
+                    <li>Attach supporting documents (medical certificates, etc.) if applicable</li>
+                </ul>
+            </div>
+            
+            <div class="refund-section">
+                <h2 class="section-heading">11. Contact Information</h2>
+                <p class="refund-text">
+                    For any questions regarding our Refund & Cancellation Policy, please contact us at:
+                </p>
+                <p class="refund-text">
+                    <strong>Phone:</strong> 9548651997<br>
+                    <strong>Address:</strong> Main Road Chandra Lok Colony, Khurja, Uttar Pradesh
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>VELOCITY ELITE CLUB</h3>
+                    <p>Premium Gym & Swimming Pool Experience</p>
+                    <div class="footer-contact">
+                        <p><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 8px;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>Main Road Chandra Lok Colony, Khurja, Uttar Pradesh</p>
+                        <p><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 8px;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>9548651997</p>
+                    </div>
+                </div>
+                <div class="footer-links-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#home" class="footer-link">Home</a></li>
+                        <li><a href="index.html#about" class="footer-link">About Us</a></li>
+                        <li><a href="index.html#gym" class="footer-link">Gym</a></li>
+                        <li><a href="index.html#pool" class="footer-link">Swimming Pool</a></li>
+                        <li><a href="index.html#facilities" class="footer-link">Facilities</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-section">
+                    <h4>Membership</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#membership" class="footer-link">Gym Plans</a></li>
+                        <li><a href="index.html#membership" class="footer-link">Pool Plans</a></li>
+                        <li><a href="index.html#membership" class="footer-link">Combo Plans</a></li>
+                        <li><a href="index.html#booking" class="footer-link">Book Trial</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-section">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="privacy-policy.html" class="footer-link">Privacy Policy</a></li>
+                        <li><a href="terms-conditions.html" class="footer-link">Terms & Conditions</a></li>
+                        <li><a href="refund-policy.html" class="footer-link">Refund Policy</a></li>
+                        <li><a href="contact.html" class="footer-link">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-social">
+                    <a href="#" class="social-link">Facebook</a>
+                    <a href="#" class="social-link">Instagram</a>
+                    <a href="#" class="social-link">Twitter</a>
+                    <a href="#" class="social-link">YouTube</a>
+                </div>
+                <p class="footer-copyright">&copy; 2026 Velocity Elite Club. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>

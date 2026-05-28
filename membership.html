@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membership Plans - Velocity Elite Club</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        .membership-page {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #000 0%, #0a0a0a 50%, #000 100%);
+            padding: 100px 20px 60px;
+        }
+        
+        .membership-header {
+            text-align: center;
+            margin-bottom: 60px;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .membership-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 700;
+            color: #00d4ff;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+        }
+        
+        .membership-subtitle {
+            font-size: 1.2rem;
+            color: #ccc;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+        
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(0, 212, 255, 0.1);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            color: #00d4ff;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 30px;
+        }
+        
+        .back-button:hover {
+            background: rgba(0, 212, 255, 0.2);
+            border-color: #00d4ff;
+            transform: translateX(-5px);
+        }
+        
+        .membership-details {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .plan-section {
+            margin-bottom: 80px;
+        }
+        
+        .plan-section-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #00d4ff;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .plan-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .plan-card {
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.7) 100%);
+            border: 1px solid rgba(0, 212, 255, 0.15);
+            border-radius: 20px;
+            padding: 50px 40px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            backdrop-filter: blur(10px);
+        }
+        
+        .plan-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(0, 212, 255, 0.15);
+            border-color: rgba(0, 212, 255, 0.3);
+        }
+        
+        .plan-card.featured {
+            border-color: rgba(0, 212, 255, 0.4);
+            box-shadow: 0 25px 50px rgba(0, 212, 255, 0.2);
+        }
+        
+        .plan-badge {
+            display: inline-block;
+            background: linear-gradient(45deg, #00d4ff, #0099ff);
+            color: #fff;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 20px;
+        }
+        
+        .plan-badge.popular {
+            background: linear-gradient(45deg, #ff3366, #ff6b6b);
+        }
+        
+        .plan-name {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 20px;
+        }
+        
+        .plan-price {
+            margin-bottom: 30px;
+        }
+        
+        .price-currency {
+            font-size: 1.5rem;
+            color: #00d4ff;
+            vertical-align: top;
+        }
+        
+        .price-amount {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: #00d4ff;
+        }
+        
+        .price-period {
+            font-size: 1rem;
+            color: #666;
+        }
+        
+        .plan-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 30px;
+            text-align: left;
+        }
+        
+        .plan-features li {
+            color: #ccc;
+            font-size: 0.95rem;
+            margin-bottom: 14px;
+            padding-left: 28px;
+            position: relative;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+        
+        .plan-features li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 8px;
+            height: 8px;
+            background: linear-gradient(135deg, #00d4ff, #0099ff);
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+        }
+        
+        .plan-button {
+            background: linear-gradient(135deg, #00d4ff 0%, #0099ff 100%);
+            color: #fff;
+            border: none;
+            padding: 16px 35px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            cursor: pointer;
+            border-radius: 30px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            width: 100%;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+        }
+        
+        .plan-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 212, 255, 0.4);
+        }
+        
+        .plan-button.featured {
+            background: linear-gradient(45deg, #ff3366, #ff6b6b);
+        }
+        
+        .plan-button.featured:hover {
+            box-shadow: 0 10px 30px rgba(255, 51, 102, 0.3);
+        }
+        
+        .faq-section {
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+        
+        .faq-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: #00d4ff;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .faq-item {
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+        
+        .faq-question {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #00d4ff;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .faq-answer {
+            color: #ccc;
+            font-size: 1rem;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+        
+        @media (max-width: 768px) {
+            .membership-page {
+                padding: 80px 20px 40px;
+            }
+            
+            .plan-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .price-amount {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html" class="logo-link">
+                    <img src="logo.png" alt="Velocity Elite Club" class="logo-image">
+                </a>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html#home" class="nav-link">Home</a></li>
+                <li><a href="index.html#about" class="nav-link">About Us</a></li>
+                <li><a href="index.html#gym" class="nav-link">Gym</a></li>
+                <li><a href="index.html#pool" class="nav-link">Swimming Pool</a></li>
+                <li><a href="index.html#facilities" class="nav-link">Facilities</a></li>
+                <li><a href="index.html#membership" class="nav-link">Membership</a></li>
+                <li><a href="index.html#booking" class="nav-link">Booking</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="membership-page">
+        <div class="membership-header">
+            <a href="index.html" class="back-button">← Back to Home</a>
+            <h1 class="membership-title">Membership Plans</h1>
+            <p class="membership-subtitle">Choose the perfect plan for your fitness journey</p>
+        </div>
+        
+        <div class="membership-details">
+            <!-- Gym Plans -->
+            <div class="plan-section">
+                <h2 class="plan-section-title">Gym Membership Plans</h2>
+                <div class="plan-cards">
+                    <div class="plan-card">
+                        <div class="plan-badge">BASIC</div>
+                        <h3 class="plan-name">Gym Basic</h3>
+                        <div class="plan-price">
+                            <span class="price-currency">₹</span>
+                            <span class="price-amount">1,999</span>
+                            <span class="price-period">/month</span>
+                        </div>
+                        <ul class="plan-features">
+                            <li>Gym Access (6 AM - 10 PM)</li>
+                            <li>Basic Equipment</li>
+                            <li>Locker Access</li>
+                            <li>1 Group Class/Week</li>
+                        </ul>
+                        <a href="gym-booking.html" class="plan-button">Choose Plan</a>
+                    </div>
+                    
+                    <div class="plan-card featured">
+                        <div class="plan-badge popular">POPULAR</div>
+                        <h3 class="plan-name">Gym Pro</h3>
+                        <div class="plan-price">
+                            <span class="price-currency">₹</span>
+                            <span class="price-amount">2,499</span>
+                            <span class="price-period">/month</span>
+                        </div>
+                        <ul class="plan-features">
+                            <li>24/7 Gym Access</li>
+                            <li>All Equipment</li>
+                            <li>Locker & Shower</li>
+                            <li>Unlimited Group Classes</li>
+                            <li>1 PT Session/Month</li>
+                            <li>Nutrition Plan</li>
+                        </ul>
+                        <a href="gym-booking.html" class="plan-button featured">Choose Plan</a>
+                    </div>
+                    
+                    <div class="plan-card">
+                        <div class="plan-badge">PREMIUM</div>
+                        <h3 class="plan-name">Gym Elite</h3>
+                        <div class="plan-price">
+                            <span class="price-currency">₹</span>
+                            <span class="price-amount">3,999</span>
+                            <span class="price-period">/month</span>
+                        </div>
+                        <ul class="plan-features">
+                            <li>24/7 Gym Access</li>
+                            <li>All Premium Equipment</li>
+                            <li>Private Locker</li>
+                            <li>Unlimited Classes</li>
+                            <li>4 PT Sessions/Month</li>
+                            <li>Personal Nutrition Coach</li>
+                            <li>Guest Pass (2/month)</li>
+                        </ul>
+                        <a href="gym-booking.html" class="plan-button">Choose Plan</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pool Plans -->
+            <div class="plan-section">
+                <h2 class="plan-section-title">Swimming Pool Plans</h2>
+                <div class="plan-cards">
+                    <div class="plan-card">
+                        <div class="plan-badge">BASIC</div>
+                        <h3 class="plan-name">Pool Basic</h3>
+                        <div class="plan-price">
+                            <span class="price-currency">₹</span>
+                            <span class="price-amount">1,499</span>
+                            <span class="price-period">/month</span>
+                        </div>
+                        <ul class="plan-features">
+                            <li>Pool Access (6 AM - 9 PM)</li>
+                            <li>Lap Swimming</li>
+                            <li>Locker Access</li>
+                            <li>1 Aqua Class/Week</li>
+                        </ul>
+                        <a href="pool-booking.html" class="plan-button">Choose Plan</a>
+                    </div>
+                    
+                    <div class="plan-card featured">
+                        <div class="plan-badge popular">POPULAR</div>
+                        <h3 class="plan-name">Pool Pro</h3>
+                        <div class="plan-price">
+                            <span class="price-currency">₹</span>
+                            <span class="price-amount">1,999</span>
+                            <span class="price-period">/month</span>
+                        </div>
+                        <ul class="plan-features">
+                            <li>Unlimited Pool Access</li>
+                            <li>Recreational Swimming</li>
+                            <li>Locker & Shower</li>
+                            <li>Family-Friendly Environment</li>
+                            <li>Relaxing Atmosphere</li>
+                            <li>Family Swim Time</li>
+                        </ul>
+                        <a href="pool-booking.html" class="plan-button featured">Choose Plan</a>
+                    </div>
+                    
+                    <div class="plan-card">
+                        <div class="plan-badge">PREMIUM</div>
+                        <h3 class="plan-name">Pool Elite</h3>
+                        <div class="plan-price">
+                            <span class="price-currency">₹</span>
+                            <span class="price-amount">2,999</span>
+                            <span class="price-period">/month</span>
+                        </div>
+                        <ul class="plan-features">
+                            <li>Unlimited Pool Access</li>
+                            <li>Recreational Swimming</li>
+                            <li>Private Locker</li>
+                            <li>Priority Booking</li>
+                            <li>Family Pass (4 members)</li>
+                            <li>Extended Hours Access</li>
+                        </ul>
+                        <a href="pool-booking.html" class="plan-button">Choose Plan</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Combo Plans -->
+            <div class="plan-section">
+                <h2 class="plan-section-title">Combo Membership Plans</h2>
+                <div class="plan-cards">
+                    <div class="plan-card">
+                        <div class="plan-badge">VALUE</div>
+                        <h3 class="plan-name">Combo Starter</h3>
+                        <div class="plan-price">
+                            <span class="price-currency">₹</span>
+                            <span class="price-amount">2,999</span>
+                            <span class="price-period">/month</span>
+                        </div>
+                        <ul class="plan-features">
+                            <li>Gym (6 AM - 10 PM)</li>
+                            <li>Pool (6 AM - 9 PM)</li>
+                            <li>Basic Equipment</li>
+                            <li>Locker Access</li>
+                            <li>2 Group Classes/Week</li>
+                        </ul>
+                        <a href="index.html#booking" class="plan-button">Choose Plan</a>
+                    </div>
+                    
+                    <div class="plan-card featured">
+                        <div class="plan-badge popular">BEST VALUE</div>
+                        <h3 class="plan-name">Combo Elite</h3>
+                        <div class="plan-price">
+                            <span class="price-currency">₹</span>
+                            <span class="price-amount">3,499</span>
+                            <span class="price-period">/month</span>
+                        </div>
+                        <ul class="plan-features">
+                            <li>24/7 Gym Access</li>
+                            <li>Unlimited Pool Access</li>
+                            <li>All Equipment & Activities</li>
+                            <li>Locker & Shower</li>
+                            <li>Unlimited Classes</li>
+                            <li>2 PT Sessions/Month</li>
+                            <li>Recreational Swimming</li>
+                            <li>Nutrition Plan</li>
+                            <li>Guest Pass (2/month)</li>
+                        </ul>
+                        <a href="index.html#booking" class="plan-button featured">Choose Plan</a>
+                    </div>
+                    
+                    <div class="plan-card">
+                        <div class="plan-badge">ULTIMATE</div>
+                        <h3 class="plan-name">Combo Ultimate</h3>
+                        <div class="plan-price">
+                            <span class="price-currency">₹</span>
+                            <span class="price-amount">4,999</span>
+                            <span class="price-period">/month</span>
+                        </div>
+                        <ul class="plan-features">
+                            <li>24/7 Gym & Pool Access</li>
+                            <li>All Premium Equipment</li>
+                            <li>Private Locker</li>
+                            <li>Unlimited Classes</li>
+                            <li>4 PT Sessions/Month</li>
+                            <li>Private Swimming Coach</li>
+                            <li>Personal Nutrition Coach</li>
+                            <li>Guest Pass (4/month)</li>
+                            <li>Spa Access</li>
+                        </ul>
+                        <a href="index.html#booking" class="plan-button">Choose Plan</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- FAQ Section -->
+            <div class="faq-section">
+                <h2 class="faq-title">Frequently Asked Questions</h2>
+                <div class="faq-item">
+                    <div class="faq-question">Can I switch between plans?</div>
+                    <div class="faq-answer">Yes, you can upgrade or downgrade your membership plan at any time. The difference will be prorated accordingly.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Is there a joining fee?</div>
+                    <div class="faq-answer">We offer zero joining fee for all annual memberships. Monthly plans have a nominal registration fee of ₹499.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Can I freeze my membership?</div>
+                    <div class="faq-answer">Yes, you can freeze your membership for up to 30 days per year for medical reasons or travel, with proper documentation.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What payment methods do you accept?</div>
+                    <div class="faq-answer">We accept all major credit/debit cards, UPI, net banking, and EMI options through Razorpay payment gateway.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>VELOCITY ELITE CLUB</h3>
+                    <p>Premium Gym & Swimming Pool Experience</p>
+                    <div class="footer-contact">
+                        <p>Main Road Chandra Lok Colony, Khurja, Uttar Pradesh</p>
+                        <p>9548651997</p>
+                    </div>
+                </div>
+                <div class="footer-links-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#home" class="footer-link">Home</a></li>
+                        <li><a href="index.html#about" class="footer-link">About Us</a></li>
+                        <li><a href="index.html#gym" class="footer-link">Gym</a></li>
+                        <li><a href="index.html#pool" class="footer-link">Swimming Pool</a></li>
+                        <li><a href="index.html#facilities" class="footer-link">Facilities</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-section">
+                    <h4>Membership</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html#membership" class="footer-link">Gym Plans</a></li>
+                        <li><a href="index.html#membership" class="footer-link">Pool Plans</a></li>
+                        <li><a href="index.html#membership" class="footer-link">Combo Plans</a></li>
+                        <li><a href="index.html#booking" class="footer-link">Book Trial</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links-section">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="privacy-policy.html" class="footer-link">Privacy Policy</a></li>
+                        <li><a href="terms-conditions.html" class="footer-link">Terms & Conditions</a></li>
+                        <li><a href="refund-policy.html" class="footer-link">Refund Policy</a></li>
+                        <li><a href="contact.html" class="footer-link">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-social">
+                    <a href="#" class="social-link">Facebook</a>
+                    <a href="#" class="social-link">Instagram</a>
+                    <a href="#" class="social-link">Twitter</a>
+                    <a href="#" class="social-link">YouTube</a>
+                </div>
+                <p class="footer-copyright">&copy; 2026 Velocity Elite Club. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
