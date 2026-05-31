@@ -2,35 +2,67 @@
 document.addEventListener('DOMContentLoaded', function() {
     const splashScreen = document.getElementById('splash-screen');
     const mainContent = document.getElementById('main-content');
-    
+    const offerPopup = document.getElementById('offer-popup');
+
     // Only run splash screen logic if elements exist (index.html only)
     if (splashScreen && mainContent) {
         // Prevent scrolling during splash screen
         document.body.classList.add('splash-active');
-        
+
         // Handle splash screen fade out and transition
         function handleSplashScreenEnd() {
             // Start fade out
             splashScreen.classList.add('fade-out');
-            
+
             // Show main content after fade starts
             setTimeout(() => {
                 mainContent.classList.add('visible');
             }, 300);
-            
+
             // Hide splash screen completely after fade and re-enable scrolling
             setTimeout(() => {
                 splashScreen.style.display = 'none';
                 document.body.classList.remove('splash-active');
             }, 1000);
         }
-        
+
         // Show splash screen for 2.5 seconds then transition
         setTimeout(() => {
             handleSplashScreenEnd();
         }, 2500);
+
+        // Show offer popup after splash screen
+        setTimeout(() => {
+            if (offerPopup) {
+                showPopup();
+            }
+        }, 3500);
     }
 });
+
+// Special Offer Popup Functions
+function showPopup() {
+    const offerPopup = document.getElementById('offer-popup');
+    if (offerPopup) {
+        offerPopup.classList.add('show');
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function closePopup() {
+    const offerPopup = document.getElementById('offer-popup');
+    if (offerPopup) {
+        offerPopup.classList.remove('show');
+        document.body.style.overflow = '';
+    }
+}
+
+function redirectToOffer() {
+    closePopup();
+    setTimeout(() => {
+        window.location.href = 'special-offer.html';
+    }, 300);
+}
 
 // Scroll animations for feature sections
 function handleScrollAnimations() {
