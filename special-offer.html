@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Combo Special Offer | Velocity Elite Club</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        .special-offer-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 100px 20px;
+            background: linear-gradient(180deg, #000 0%, #0a0a0a 50%, #000 100%);
+            position: relative;
+        }
+
+        .special-offer-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -50%;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.05), transparent);
+            animation: shimmer 8s linear infinite;
+        }
+
+        .offer-content {
+            max-width: 600px;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .offer-badge {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff3366, #ff6b6b);
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 30px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .offer-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 3.5rem);
+            font-weight: 700;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            text-align: center;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #00d4ff, #0099ff, #00d4ff);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientShift 3s ease-in-out infinite;
+        }
+
+        .offer-subtitle {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            font-weight: 600;
+            color: #00d4ff;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .offer-card {
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.85) 100%);
+            border: 2px solid rgba(0, 212, 255, 0.3);
+            border-radius: 25px;
+            padding: 50px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 25px 80px rgba(0, 212, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .offer-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 212, 255, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .offer-card-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .offer-price-container {
+            margin: 30px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .offer-price {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(3rem, 8vw, 4.5rem);
+            font-weight: 700;
+            color: #00d4ff;
+            line-height: 1;
+        }
+
+        .offer-price-currency {
+            font-size: 2rem;
+            vertical-align: top;
+        }
+
+        .regular-price {
+            font-size: 1.2rem;
+            color: #666;
+            text-decoration: line-through;
+            font-weight: 400;
+        }
+
+        .offer-features {
+            list-style: none;
+            padding: 0;
+            margin: 30px 0;
+            text-align: left;
+        }
+
+        .offer-features li {
+            color: #ccc;
+            font-size: 1rem;
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+
+        .offer-features li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 10px;
+            height: 10px;
+            background: linear-gradient(135deg, #00d4ff, #0099ff);
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+        }
+
+        .offer-supporting-text {
+            color: #999;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin: 25px 0;
+            font-weight: 300;
+        }
+
+        .offer-supporting-text strong {
+            color: #00d4ff;
+            font-weight: 600;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 30px;
+            color: #999;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .back-button:hover {
+            color: #00d4ff;
+        }
+
+        @media (max-width: 768px) {
+            .offer-card {
+                padding: 35px 25px;
+            }
+
+            .offer-price-container {
+                margin: 25px 0;
+            }
+
+            .offer-features {
+                margin: 25px 0;
+            }
+
+            .offer-features li {
+                font-size: 0.95rem;
+                margin-bottom: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="special-offer-section">
+        <div class="offer-content">
+            <div class="offer-badge">Limited Launch Offer</div>
+            <h1 class="offer-title">Elite Combo Special Offer</h1>
+            <p class="offer-subtitle">Swimming Pool + Gym Access</p>
+            
+            <div class="offer-card">
+                <div class="offer-card-content">
+                    <p class="offer-supporting-text">Special Offer For Early Members</p>
+                    
+                    <div class="offer-price-container">
+                        <span class="offer-price">
+                            <span class="offer-price-currency">₹</span>2499
+                        </span>
+                        <span class="regular-price">Regular Price ₹3499</span>
+                    </div>
+                    
+                    <ul class="offer-features">
+                        <li>Full Gym + Pool Access</li>
+                        <li>All Group Classes Included</li>
+                        <li>2 PT Sessions/Month</li>
+                        <li>Priority Booking</li>
+                        <li>Nutrition + Wellness Plan</li>
+                    </ul>
+                    
+                    <p class="offer-supporting-text">
+                        <strong>Exclusive pricing available for early members only.</strong><br>
+                        Secure your membership today with this limited-time offer.
+                    </p>
+                    
+                    <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_Sw51JWa1OAMVm5" async> </script> </form>
+                    
+                    <a href="index.html" class="back-button">← Back to Home</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
