@@ -34,6 +34,144 @@ body.splash-active {
     visibility: visible;
 }
 
+/* Special Offer Popup Modal */
+.offer-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9998;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+}
+
+.offer-popup.show {
+    display: flex;
+    opacity: 1;
+}
+
+.popup-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+}
+
+.popup-content {
+    position: relative;
+    max-width: 600px;
+    width: 90%;
+    max-height: 90vh;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.9) 100%);
+    border: 2px solid rgba(0, 212, 255, 0.3);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    transform: scale(0.8);
+    transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    box-shadow: 0 25px 80px rgba(0, 212, 255, 0.3);
+    overflow-y: auto;
+}
+
+.offer-popup.show .popup-content {
+    transform: scale(1);
+}
+
+.popup-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 212, 255, 0.2);
+    border: 2px solid rgba(0, 212, 255, 0.4);
+    border-radius: 50%;
+    color: #00d4ff;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.popup-close:hover {
+    background: rgba(0, 212, 255, 0.4);
+    border-color: rgba(0, 212, 255, 0.6);
+    transform: rotate(90deg);
+}
+
+.popup-image-container {
+    margin-bottom: 25px;
+    cursor: pointer;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.popup-image-container:hover {
+    transform: scale(1.02);
+}
+
+.popup-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+}
+
+.popup-cta {
+    background: linear-gradient(135deg, #00d4ff 0%, #0099ff 100%);
+    color: #fff;
+    border: none;
+    padding: 18px 45px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+    width: 100%;
+}
+
+.popup-cta:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 212, 255, 0.4);
+}
+
+/* Responsive Popup */
+@media (max-width: 768px) {
+    .popup-content {
+        width: 95%;
+        padding: 20px;
+        max-height: 85vh;
+    }
+    
+    .popup-close {
+        width: 35px;
+        height: 35px;
+        font-size: 24px;
+        top: 10px;
+        right: 10px;
+    }
+    
+    .popup-cta {
+        padding: 15px 35px;
+        font-size: 0.9rem;
+    }
+}
+
 .splash-screen.fade-out {
     opacity: 0;
     visibility: hidden;
@@ -632,9 +770,33 @@ body.splash-active {
 }
 
 .facilities-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    display: flex;
+    gap: 25px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    padding: 20px 5px 40px 5px;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 212, 255, 0.3) rgba(0, 0, 0, 0.2);
+}
+
+.facilities-grid::-webkit-scrollbar {
+    height: 8px;
+}
+
+.facilities-grid::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.facilities-grid::-webkit-scrollbar-thumb {
+    background: rgba(0, 212, 255, 0.3);
+    border-radius: 10px;
+}
+
+.facilities-grid::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 212, 255, 0.5);
 }
 
 .facility-card {
@@ -647,6 +809,9 @@ body.splash-active {
     opacity: 0;
     transform: translateY(30px);
     backdrop-filter: blur(10px);
+    flex: 0 0 auto;
+    width: 320px;
+    scroll-snap-align: start;
 }
 
 .facility-card.animate {
@@ -997,6 +1162,16 @@ body.splash-active {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .facility-card {
+        width: 280px;
+        padding: 35px 25px;
+    }
+    
+    .facilities-grid {
+        gap: 20px;
+        padding: 15px 5px 35px 5px;
+    }
+    
     .feature-content {
         grid-template-columns: 1fr;
         gap: 40px;
@@ -1141,6 +1316,14 @@ body.splash-active {
 
 /* Tablet Responsive */
 @media (min-width: 769px) and (max-width: 1024px) {
+    .facility-card {
+        width: 300px;
+    }
+    
+    .facilities-grid {
+        gap: 22px;
+    }
+    
     .footer-grid {
         grid-template-columns: 1fr 1fr;
         gap: 30px;
@@ -1172,6 +1355,14 @@ body.splash-active {
 
 /* Large Desktop */
 @media (min-width: 1400px) {
+    .facility-card {
+        width: 340px;
+    }
+    
+    .facilities-grid {
+        gap: 30px;
+    }
+    
     .logo-image {
         height: 60px;
         max-width: 200px;
