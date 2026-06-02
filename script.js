@@ -255,6 +255,20 @@ function handleNewSectionAnimations() {
         card.style.transitionDelay = `${index * 100}ms`;
         observer.observe(card);
     });
+    
+    // Observe premium feature cards
+    const premiumFeatureCards = document.querySelectorAll('.premium-feature-card');
+    premiumFeatureCards.forEach((card, index) => {
+        card.style.transitionDelay = `${index * 100}ms`;
+        observer.observe(card);
+    });
+    
+    // Observe process steps
+    const processSteps = document.querySelectorAll('.process-step');
+    processSteps.forEach((step, index) => {
+        step.style.transitionDelay = `${index * 150}ms`;
+        observer.observe(step);
+    });
 }
 
 // Initialize new section animations
