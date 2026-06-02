@@ -1312,6 +1312,18 @@ body.splash-active {
     .footer-social {
         justify-content: center;
     }
+    
+    /* Very small screens - allow vertical stacking if absolutely necessary */
+    @media (max-width: 350px) {
+        .premium-features-grid {
+            flex-direction: column;
+            overflow-x: visible;
+        }
+        
+        .premium-feature-card {
+            width: 100%;
+        }
+    }
 }
 
 /* Tablet Responsive */
@@ -1366,5 +1378,1278 @@ body.splash-active {
     .logo-image {
         height: 60px;
         max-width: 200px;
+    }
+    
+    .premium-feature-card {
+        width: 340px;
+    }
+    
+    .premium-features-grid {
+        gap: 35px;
+    }
+}
+
+/* Personal Training Page Styles */
+.pt-hero {
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.pt-hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #000 0%, #0a0a0a 50%, #000 100%);
+    z-index: -1;
+}
+
+.pt-hero-content {
+    text-align: center;
+    z-index: 2;
+    animation: fadeInUp 1.5s ease-out;
+    padding: 0 20px;
+}
+
+.pt-hero-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(3rem, 10vw, 6rem);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    background: linear-gradient(45deg, #00d4ff, #0099ff, #00d4ff);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 3s ease-in-out infinite;
+}
+
+.pt-hero-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    color: #ccc;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+}
+
+.pt-hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Coach Section */
+.pt-coach-section {
+    padding: 100px 20px;
+    background: linear-gradient(180deg, #000 0%, #0a0a0a 50%, #000 100%);
+}
+
+.pt-coach-content {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.pt-coach-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.pt-coach-info {
+    text-align: center;
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.8s ease-out;
+}
+
+.pt-coach-info.animate {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.pt-coach-image-wrapper {
+    margin-bottom: 30px;
+}
+
+.pt-coach-placeholder {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.2), rgba(0, 153, 255, 0.1));
+    border: 3px solid rgba(0, 212, 255, 0.4);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 20px 60px rgba(0, 212, 255, 0.2);
+}
+
+.pt-coach-initials {
+    font-family: 'Oswald', sans-serif;
+    font-size: 4rem;
+    font-weight: 700;
+    color: #00d4ff;
+    letter-spacing: 0.1em;
+}
+
+.pt-coach-name {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 10px;
+}
+
+.pt-coach-designation {
+    font-size: 1.1rem;
+    color: #00d4ff;
+    margin-bottom: 20px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+}
+
+.pt-coach-cert-badge {
+    display: inline-block;
+    background: linear-gradient(45deg, #00d4ff, #0099ff);
+    color: #fff;
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.pt-coach-cert {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.8s ease-out 0.2s;
+}
+
+.pt-coach-cert.animate {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.pt-cert-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 25px;
+}
+
+.pt-cert-image-wrapper {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.7) 100%);
+    border: 2px solid rgba(0, 212, 255, 0.3);
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 25px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 212, 255, 0.2);
+}
+
+.pt-cert-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    filter: blur(0px);
+}
+
+.pt-cert-desc {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #ccc;
+    font-weight: 300;
+}
+
+/* Features Section */
+.pt-features-section {
+    padding: 100px 20px;
+    background: linear-gradient(180deg, #000 0%, #0a0a0a 50%, #000 100%);
+}
+
+.pt-features-content {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.pt-features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.pt-feature-card {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.7) 100%);
+    border: 1px solid rgba(0, 212, 255, 0.15);
+    border-radius: 20px;
+    padding: 45px 35px;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    opacity: 0;
+    transform: translateY(30px);
+    backdrop-filter: blur(10px);
+}
+
+.pt-feature-card.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.pt-feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px rgba(0, 212, 255, 0.15);
+    border-color: rgba(0, 212, 255, 0.3);
+}
+
+.pt-feature-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 25px;
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.2), rgba(0, 153, 255, 0.1));
+    border: 2px solid rgba(0, 212, 255, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #00d4ff;
+}
+
+.pt-feature-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 18px;
+}
+
+.pt-feature-desc {
+    color: #ccc;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+/* Pricing Section */
+.pt-pricing-section {
+    padding: 100px 20px;
+    background: linear-gradient(180deg, #000 0%, #0a0a0a 50%, #000 100%);
+}
+
+.pt-pricing-content {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.pt-pricing-card {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.7) 100%);
+    border: 2px solid rgba(0, 212, 255, 0.4);
+    border-radius: 24px;
+    padding: 60px 50px;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    opacity: 0;
+    transform: translateY(30px);
+    backdrop-filter: blur(10px);
+    max-width: 600px;
+    margin: 50px auto 0;
+    box-shadow: 0 25px 80px rgba(0, 212, 255, 0.2);
+}
+
+.pt-pricing-card.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.pt-pricing-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 35px 100px rgba(0, 212, 255, 0.3);
+}
+
+.pt-pricing-badge {
+    display: inline-block;
+    background: linear-gradient(45deg, #00d4ff, #0099ff);
+    color: #fff;
+    padding: 8px 25px;
+    border-radius: 25px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 25px;
+}
+
+.pt-pricing-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 25px;
+}
+
+.pt-pricing-price {
+    margin-bottom: 35px;
+}
+
+.pt-pricing-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 40px;
+    text-align: left;
+}
+
+.pt-pricing-features li {
+    color: #ccc;
+    font-size: 1rem;
+    margin-bottom: 16px;
+    padding-left: 32px;
+    position: relative;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+.pt-pricing-features li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 10px;
+    height: 10px;
+    background: linear-gradient(135deg, #00d4ff, #0099ff);
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+}
+
+.pt-pricing-cta {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.pt-pricing-cta .cta-button {
+    flex: 1;
+    min-width: 200px;
+}
+
+/* CTA Section */
+.pt-cta-section {
+    padding: 100px 20px;
+    background: linear-gradient(180deg, #000 0%, #0a0a0a 50%, #000 100%);
+}
+
+.pt-cta-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.pt-cta-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 20px;
+}
+
+.pt-cta-subtitle {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #ccc;
+    margin-bottom: 40px;
+    font-weight: 300;
+}
+
+.pt-cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Active Navigation Link */
+.nav-link.active {
+    color: #00d4ff;
+}
+
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* Personal Training Page Responsive */
+@media (max-width: 768px) {
+    .pt-coach-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .pt-coach-info {
+        transform: translateY(30px);
+    }
+    
+    .pt-coach-info.animate {
+        transform: translateY(0);
+    }
+    
+    .pt-coach-cert {
+        transform: translateY(30px);
+    }
+    
+    .pt-coach-cert.animate {
+        transform: translateY(0);
+    }
+    
+    .pt-hero-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .pt-pricing-card {
+        padding: 40px 30px;
+    }
+    
+    .pt-pricing-cta {
+        flex-direction: column;
+    }
+    
+    .pt-pricing-cta .cta-button {
+        width: 100%;
+    }
+    
+    .pt-cta-buttons {
+        flex-direction: column;
+    }
+    
+    .pt-cta-buttons .cta-button {
+        width: 100%;
+    }
+    
+    .pt-coach-placeholder {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .pt-coach-initials {
+        font-size: 3rem;
+    }
+    
+    .pt-coach-name {
+        font-size: 2rem;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .pt-coach-grid {
+        gap: 40px;
+    }
+    
+    .pt-features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ==================== PREMIUM PERSONAL TRAINING STYLES ==================== */
+
+/* Premium Hero Section */
+.premium-hero {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 120px 20px 80px;
+}
+
+.premium-hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #000 0%, #0a0a0a 50%, #000 100%);
+    z-index: -1;
+}
+
+.premium-hero-content {
+    text-align: center;
+    z-index: 2;
+    max-width: 900px;
+    animation: fadeInUp 1.5s ease-out;
+}
+
+.premium-hero-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(3.5rem, 10vw, 7rem);
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    background: linear-gradient(45deg, #00d4ff, #0099ff, #00d4ff);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 3s ease-in-out infinite;
+    line-height: 1.1;
+}
+
+.premium-hero-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(1.2rem, 3vw, 1.6rem);
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    color: #ccc;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.premium-hero-price {
+    margin-bottom: 1rem;
+}
+
+.price-highlight {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 700;
+    color: #00d4ff;
+    letter-spacing: 0.05em;
+}
+
+.price-period {
+    font-size: 1.2rem;
+    color: #999;
+    font-weight: 300;
+    margin-left: 8px;
+}
+
+.premium-hero-includes {
+    font-size: 1.1rem;
+    color: #00d4ff;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+}
+
+.premium-cta-button {
+    background: linear-gradient(135deg, #00d4ff 0%, #0099ff 100%);
+    color: #fff;
+    border: none;
+    padding: 18px 55px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 8px 30px rgba(0, 212, 255, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.premium-cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.premium-cta-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 212, 255, 0.5);
+}
+
+.premium-cta-button:hover::before {
+    left: 100%;
+}
+
+/* Premium Coach Section */
+.premium-coach-section {
+    padding: 120px 20px;
+    background: linear-gradient(180deg, #000 0%, #0a0a0a 50%, #000 100%);
+}
+
+.premium-coach-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.coach-profile-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.coach-avatar {
+    width: 180px;
+    height: 180px;
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.15), rgba(0, 153, 255, 0.08));
+    border: 3px solid rgba(0, 212, 255, 0.4);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 20px 60px rgba(0, 212, 255, 0.25);
+    backdrop-filter: blur(10px);
+}
+
+.coach-initials {
+    font-family: 'Oswald', sans-serif;
+    font-size: 4rem;
+    font-weight: 700;
+    color: #00d4ff;
+    letter-spacing: 0.1em;
+}
+
+.coach-name {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 8px;
+}
+
+.coach-role {
+    font-size: 1.1rem;
+    color: #00d4ff;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    margin-bottom: 15px;
+}
+
+.coach-certification {
+    display: inline-block;
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.2), rgba(0, 153, 255, 0.1));
+    border: 1px solid rgba(0, 212, 255, 0.4);
+    color: #00d4ff;
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    backdrop-filter: blur(10px);
+}
+
+.coach-intro {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #ccc;
+    font-weight: 300;
+    max-width: 700px;
+    margin: 0 auto 50px;
+    letter-spacing: 0.02em;
+}
+
+.certificate-card {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(10, 10, 10, 0.9));
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 600px;
+    margin: 0 auto;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 25px 80px rgba(0, 212, 255, 0.15);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.certificate-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 35px 100px rgba(0, 212, 255, 0.25);
+    border-color: rgba(0, 212, 255, 0.5);
+}
+
+.certificate-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+}
+
+/* Premium Features Section */
+.premium-features-section {
+    padding: 120px 20px;
+    background: linear-gradient(180deg, #000 0%, #0a0a0a 50%, #000 100%);
+}
+
+.premium-features-content {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.premium-section-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-align: center;
+    margin-bottom: 80px;
+    position: relative;
+}
+
+.premium-section-title::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #00d4ff, transparent);
+    margin: 30px auto 0;
+}
+
+.premium-features-grid {
+    display: flex;
+    gap: 30px;
+    margin-top: 60px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    padding: 20px 5px 40px 5px;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 212, 255, 0.3) rgba(0, 0, 0, 0.2);
+}
+
+.premium-features-grid::-webkit-scrollbar {
+    height: 8px;
+}
+
+.premium-features-grid::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.premium-features-grid::-webkit-scrollbar-thumb {
+    background: rgba(0, 212, 255, 0.3);
+    border-radius: 10px;
+}
+
+.premium-features-grid::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 212, 255, 0.5);
+}
+
+.premium-feature-card {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(10, 10, 10, 0.9));
+    border: 1px solid rgba(0, 212, 255, 0.15);
+    border-radius: 20px;
+    padding: 50px 40px;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(15px);
+    opacity: 0;
+    transform: translateY(30px);
+    flex: 0 0 auto;
+    width: 320px;
+    scroll-snap-align: start;
+}
+
+.premium-feature-card.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.premium-feature-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 30px 60px rgba(0, 212, 255, 0.2);
+    border-color: rgba(0, 212, 255, 0.4);
+}
+
+.feature-icon-wrapper {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 25px;
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.15), rgba(0, 153, 255, 0.08));
+    border: 2px solid rgba(0, 212, 255, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #00d4ff;
+    transition: all 0.3s ease;
+}
+
+.premium-feature-card:hover .feature-icon-wrapper {
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.25), rgba(0, 153, 255, 0.15));
+    border-color: rgba(0, 212, 255, 0.5);
+    transform: scale(1.1);
+}
+
+.premium-feature-card h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin: 0;
+}
+
+/* Premium Process Section */
+.premium-process-section {
+    padding: 120px 20px;
+    background: linear-gradient(180deg, #000 0%, #0a0a0a 50%, #000 100%);
+}
+
+.premium-process-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.process-timeline {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-top: 80px;
+}
+
+.process-step {
+    text-align: center;
+    position: relative;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.process-step.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.step-number {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 25px;
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.2), rgba(0, 153, 255, 0.1));
+    border: 2px solid rgba(0, 212, 255, 0.4);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Oswald', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #00d4ff;
+    letter-spacing: 0.05em;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.process-step:hover .step-number {
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.3), rgba(0, 153, 255, 0.2));
+    border-color: rgba(0, 212, 255, 0.6);
+    transform: scale(1.1);
+}
+
+.step-content h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 15px;
+}
+
+.step-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #999;
+    font-weight: 300;
+}
+
+/* Premium Membership Section */
+.premium-membership-section {
+    padding: 120px 20px;
+    background: linear-gradient(180deg, #000 0%, #0a0a0a 50%, #000 100%);
+}
+
+.premium-membership-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.premium-membership-card {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(10, 10, 10, 0.95));
+    border: 2px solid rgba(0, 212, 255, 0.4);
+    border-radius: 30px;
+    padding: 70px 60px;
+    text-align: center;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 30px 100px rgba(0, 212, 255, 0.25);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.premium-membership-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0, 212, 255, 0.05) 0%, transparent 70%);
+    animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.premium-membership-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 40px 120px rgba(0, 212, 255, 0.35);
+    border-color: rgba(0, 212, 255, 0.6);
+}
+
+.membership-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #00d4ff, #0099ff);
+    color: #fff;
+    padding: 10px 30px;
+    border-radius: 30px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.membership-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 25px;
+    position: relative;
+    z-index: 1;
+}
+
+.membership-price {
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.membership-price .price-currency {
+    font-size: 2rem;
+    color: #00d4ff;
+    vertical-align: top;
+}
+
+.membership-price .price-amount {
+    font-family: 'Oswald', sans-serif;
+    font-size: 4rem;
+    font-weight: 700;
+    color: #00d4ff;
+}
+
+.membership-price .price-period {
+    font-size: 1.2rem;
+    color: #999;
+    font-weight: 300;
+}
+
+.membership-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 45px;
+    text-align: left;
+    position: relative;
+    z-index: 1;
+}
+
+.membership-features li {
+    color: #ccc;
+    font-size: 1.1rem;
+    margin-bottom: 18px;
+    padding-left: 35px;
+    position: relative;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+.membership-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 24px;
+    height: 24px;
+    background: linear-gradient(135deg, #00d4ff, #0099ff);
+    border-radius: 50%;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+}
+
+.premium-membership-card .premium-cta-button {
+    position: relative;
+    z-index: 1;
+}
+
+/* Premium Final CTA Section */
+.premium-final-cta {
+    padding: 150px 20px;
+    background: linear-gradient(180deg, #000 0%, #0a0a0a 50%, #000 100%);
+    text-align: center;
+}
+
+.premium-final-cta-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.final-cta-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(3rem, 8vw, 5rem);
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 20px;
+    background: linear-gradient(45deg, #00d4ff, #0099ff, #00d4ff);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 3s ease-in-out infinite;
+}
+
+.final-cta-subtitle {
+    font-size: 1.4rem;
+    color: #ccc;
+    font-weight: 300;
+    margin-bottom: 50px;
+    letter-spacing: 0.05em;
+}
+
+/* Premium Responsive Design */
+@media (max-width: 768px) {
+    .premium-hero {
+        padding: 100px 20px 60px;
+    }
+    
+    .premium-hero-title {
+        margin-bottom: 1.5rem;
+    }
+    
+    .premium-hero-subtitle {
+        margin-bottom: 2rem;
+    }
+    
+    .premium-hero-includes {
+        margin-bottom: 2.5rem;
+    }
+    
+    .premium-cta-button {
+        padding: 16px 45px;
+        font-size: 0.9rem;
+    }
+    
+    .premium-coach-section {
+        padding: 80px 20px;
+    }
+    
+    .coach-avatar {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .coach-initials {
+        font-size: 3rem;
+    }
+    
+    .coach-name {
+        font-size: 2rem;
+    }
+    
+    .coach-intro {
+        font-size: 1.1rem;
+        margin-bottom: 40px;
+    }
+    
+    .certificate-card {
+        padding: 20px;
+    }
+    
+    .premium-features-section {
+        padding: 80px 20px;
+    }
+    
+    .premium-section-title {
+        margin-bottom: 50px;
+    }
+    
+    .premium-features-grid {
+        gap: 25px;
+        padding: 15px 5px 35px 5px;
+    }
+    
+    .premium-feature-card {
+        width: 280px;
+        padding: 40px 30px;
+    }
+    
+    .premium-process-section {
+        padding: 80px 20px;
+    }
+    
+    .process-timeline {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+    
+    .step-number {
+        width: 70px;
+        height: 70px;
+        font-size: 1.8rem;
+    }
+    
+    .premium-membership-section {
+        padding: 80px 20px;
+    }
+    
+    .premium-membership-card {
+        padding: 50px 35px;
+    }
+    
+    .membership-title {
+        font-size: 2rem;
+    }
+    
+    .membership-price .price-amount {
+        font-size: 3rem;
+    }
+    
+    .premium-final-cta {
+        padding: 100px 20px;
+    }
+    
+    .final-cta-title {
+        margin-bottom: 15px;
+    }
+    
+    .final-cta-subtitle {
+        font-size: 1.2rem;
+        margin-bottom: 35px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .premium-features-grid {
+        gap: 25px;
+    }
+    
+    .premium-feature-card {
+        width: 300px;
+    }
+    
+    .process-timeline {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Razorpay Payment Button Styling */
+.premium-hero-content form,
+.premium-membership-card form,
+.premium-final-cta-content form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+}
+
+.premium-hero-content form {
+    margin-top: 3rem;
+}
+
+.premium-membership-card form {
+    margin-top: 0;
+}
+
+.premium-final-cta-content form {
+    margin-top: 50px;
+}
+
+/* Style the Razorpay button iframe */
+form iframe {
+    border-radius: 50px !important;
+    box-shadow: 0 8px 30px rgba(0, 212, 255, 0.4) !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    max-width: 100% !important;
+}
+
+form iframe:hover {
+    box-shadow: 0 12px 40px rgba(0, 212, 255, 0.5) !important;
+    transform: translateY(-4px) !important;
+}
+
+/* Responsive Razorpay button */
+@media (max-width: 768px) {
+    .premium-hero-content form {
+        margin-top: 2.5rem;
+    }
+    
+    .premium-final-cta-content form {
+        margin-top: 35px;
+    }
+    
+    form iframe {
+        min-width: 200px !important;
+        width: 100% !important;
     }
 }
