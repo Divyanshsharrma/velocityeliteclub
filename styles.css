@@ -1323,6 +1323,19 @@ body.splash-active {
         .premium-feature-card {
             width: 100%;
         }
+        
+        .ladies-batch-features {
+            grid-template-columns: 1fr;
+        }
+        
+        .ladies-batch-timing {
+            flex-direction: column;
+            text-align: center;
+        }
+        
+        .timing-text {
+            text-align: center;
+        }
     }
 }
 
@@ -1363,6 +1376,14 @@ body.splash-active {
     .footer-social {
         justify-content: center;
     }
+    
+    .ladies-batch-features {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .premium-membership-cards-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* Large Desktop */
@@ -1387,6 +1408,567 @@ body.splash-active {
     .premium-features-grid {
         gap: 35px;
     }
+}
+
+/* Female Batch Section */
+.ladies-batch-section {
+    padding: 120px 20px;
+    background: linear-gradient(180deg, #000 0%, #0a0a0a 50%, #000 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.ladies-batch-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 105, 180, 0.03), transparent);
+    animation: shimmer 8s linear infinite;
+}
+
+.ladies-batch-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.ladies-batch-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #ff69b4, #ff1493);
+    color: #fff;
+    padding: 8px 25px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 20px rgba(255, 105, 180, 0.3);
+}
+
+.ladies-batch-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 20px;
+    background: linear-gradient(45deg, #ff69b4, #ff1493, #ff69b4);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 3s ease-in-out infinite;
+}
+
+.ladies-batch-subtitle {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-bottom: 50px;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+.ladies-batch-timing {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 50px;
+    padding: 25px 40px;
+    background: linear-gradient(135deg, rgba(255, 105, 180, 0.1), rgba(255, 20, 147, 0.05));
+    border: 1px solid rgba(255, 105, 180, 0.2);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+}
+
+.timing-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, rgba(255, 105, 180, 0.2), rgba(255, 20, 147, 0.1));
+    border: 2px solid rgba(255, 105, 180, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ff69b4;
+}
+
+.timing-text {
+    text-align: left;
+}
+
+.timing-label {
+    display: block;
+    font-size: 0.9rem;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 5px;
+}
+
+.timing-value {
+    display: block;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ff69b4;
+    letter-spacing: 0.05em;
+}
+
+.ladies-batch-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+    margin-bottom: 50px;
+}
+
+.ladies-feature-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 30px 25px;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.8), rgba(10, 10, 10, 0.9));
+    border: 1px solid rgba(255, 105, 180, 0.15);
+    border-radius: 16px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(10px);
+}
+
+.ladies-feature-item:hover {
+    transform: translateY(-8px);
+    border-color: rgba(255, 105, 180, 0.3);
+    box-shadow: 0 20px 40px rgba(255, 105, 180, 0.15);
+}
+
+.ladies-feature-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, rgba(255, 105, 180, 0.15), rgba(255, 20, 147, 0.08));
+    border: 2px solid rgba(255, 105, 180, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ff69b4;
+    transition: all 0.3s ease;
+}
+
+.ladies-feature-item:hover .ladies-feature-icon {
+    background: linear-gradient(135deg, rgba(255, 105, 180, 0.25), rgba(255, 20, 147, 0.15));
+    border-color: rgba(255, 105, 180, 0.5);
+    transform: scale(1.1);
+}
+
+.ladies-feature-item span {
+    font-size: 1rem;
+    color: #fff;
+    font-weight: 500;
+    text-align: center;
+}
+
+.ladies-cta-button {
+    background: linear-gradient(135deg, #ff69b4 0%, #ff1493 100%);
+    color: #fff;
+    border: none;
+    padding: 18px 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 20px rgba(255, 105, 180, 0.3);
+}
+
+.ladies-cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(255, 105, 180, 0.4);
+}
+
+/* Premium Membership Cards Grid */
+.premium-membership-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.premium-membership-card.ladies-card {
+    border-color: rgba(255, 105, 180, 0.3);
+    box-shadow: 0 25px 50px rgba(255, 105, 180, 0.15);
+}
+
+.premium-membership-card.ladies-card:hover {
+    border-color: rgba(255, 105, 180, 0.5);
+    box-shadow: 0 30px 60px rgba(255, 105, 180, 0.25);
+}
+
+.membership-badge.ladies-badge {
+    background: linear-gradient(135deg, #ff69b4, #ff1493);
+}
+
+.limited-slots {
+    color: #ff69b4;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin: 20px 0 25px;
+    text-align: center;
+}
+
+/* Premium Hero Cards */
+.premium-hero-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero-pricing-card {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(10, 10, 10, 0.95));
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    border-radius: 20px;
+    padding: 40px 35px;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(15px);
+}
+
+.hero-pricing-card.men-card {
+    border-color: rgba(0, 212, 255, 0.2);
+}
+
+.hero-pricing-card.men-card:hover {
+    border-color: rgba(0, 212, 255, 0.4);
+    box-shadow: 0 25px 50px rgba(0, 212, 255, 0.2);
+    transform: translateY(-8px);
+}
+
+.hero-pricing-card.ladies-card {
+    border-color: rgba(255, 105, 180, 0.2);
+}
+
+.hero-pricing-card.ladies-card:hover {
+    border-color: rgba(255, 105, 180, 0.4);
+    box-shadow: 0 25px 50px rgba(255, 105, 180, 0.2);
+    transform: translateY(-8px);
+}
+
+.hero-card-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #00d4ff, #0099ff);
+    color: #fff;
+    padding: 6px 18px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 20px;
+}
+
+.hero-card-badge.ladies-badge {
+    background: linear-gradient(135deg, #ff69b4, #ff1493);
+}
+
+.hero-card-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 20px;
+}
+
+.hero-card-price {
+    margin-bottom: 25px;
+}
+
+.hero-card-price .price-currency {
+    font-size: 1.5rem;
+    color: #00d4ff;
+    vertical-align: top;
+}
+
+.hero-card-price .price-amount {
+    font-family: 'Oswald', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #00d4ff;
+}
+
+.hero-card-price .price-period {
+    font-size: 1rem;
+    color: #666;
+}
+
+.ladies-card .hero-card-price .price-currency,
+.ladies-card .hero-card-price .price-amount {
+    color: #ff69b4;
+}
+
+.hero-card-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px;
+    text-align: left;
+}
+
+.hero-card-features li {
+    color: #ccc;
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+    padding-left: 28px;
+    position: relative;
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+.hero-card-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #00d4ff;
+    font-weight: 700;
+}
+
+.ladies-card .hero-card-features li::before {
+    color: #ff69b4;
+}
+
+.hero-cta-button {
+    background: linear-gradient(135deg, #00d4ff 0%, #0099ff 100%);
+    color: #fff;
+    border: none;
+    padding: 14px 35px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%;
+    box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+}
+
+.hero-cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 212, 255, 0.4);
+}
+
+.hero-cta-button.ladies-cta {
+    background: linear-gradient(135deg, #ff69b4 0%, #ff1493 100%);
+    box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
+}
+
+.hero-cta-button.ladies-cta:hover {
+    box-shadow: 0 8px 25px rgba(255, 105, 180, 0.4);
+}
+
+/* Premium Training Sections */
+.premium-training-section {
+    padding: 100px 20px;
+    background: linear-gradient(180deg, #000 0%, #0a0a0a 50%, #000 100%);
+}
+
+.premium-training-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.training-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #00d4ff, #0099ff);
+    color: #fff;
+    padding: 8px 25px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 25px;
+}
+
+.training-badge.ladies-badge {
+    background: linear-gradient(135deg, #ff69b4, #ff1493);
+}
+
+.training-section-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 15px;
+}
+
+.training-section-subtitle {
+    font-size: 1.1rem;
+    color: #ccc;
+    margin-bottom: 50px;
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+.training-details-card {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(10, 10, 10, 0.95));
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    border-radius: 20px;
+    padding: 50px 40px;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(15px);
+}
+
+.training-details-card.ladies-card {
+    border-color: rgba(255, 105, 180, 0.2);
+}
+
+.training-details-card.ladies-card:hover {
+    border-color: rgba(255, 105, 180, 0.4);
+    box-shadow: 0 25px 50px rgba(255, 105, 180, 0.2);
+}
+
+.training-price-display {
+    margin-bottom: 40px;
+}
+
+.training-price-display .price-currency {
+    font-size: 1.8rem;
+    color: #00d4ff;
+    vertical-align: top;
+}
+
+.training-price-display .price-amount {
+    font-family: 'Oswald', sans-serif;
+    font-size: 4rem;
+    font-weight: 700;
+    color: #00d4ff;
+}
+
+.training-price-display .price-period {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.ladies-card .training-price-display .price-currency,
+.ladies-card .training-price-display .price-amount {
+    color: #ff69b4;
+}
+
+.training-features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 40px;
+    text-align: left;
+}
+
+.training-features-list li {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    color: #ccc;
+    font-size: 1.1rem;
+    margin-bottom: 18px;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    font-weight: 300;
+}
+
+.training-features-list li:last-child {
+    border-bottom: none;
+}
+
+.feature-check {
+    width: 28px;
+    height: 28px;
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.2), rgba(0, 153, 255, 0.1));
+    border: 2px solid rgba(0, 212, 255, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #00d4ff;
+    font-weight: 700;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}
+
+.ladies-card .feature-check {
+    background: linear-gradient(135deg, rgba(255, 105, 180, 0.2), rgba(255, 20, 147, 0.1));
+    border-color: rgba(255, 105, 180, 0.3);
+    color: #ff69b4;
+}
+
+.training-payment-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.limited-slots-highlight {
+    color: #ff69b4;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin: 25px 0 30px;
+}
+
+/* Final CTA Buttons */
+.final-cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.final-cta-button {
+    background: linear-gradient(135deg, #00d4ff 0%, #0099ff 100%);
+    color: #fff;
+    border: none;
+    padding: 16px 40px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+}
+
+.final-cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 212, 255, 0.4);
+}
+
+.final-cta-button.ladies-final-cta {
+    background: linear-gradient(135deg, #ff69b4 0%, #ff1493 100%);
+    box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
+}
+
+.final-cta-button.ladies-final-cta:hover {
+    box-shadow: 0 8px 25px rgba(255, 105, 180, 0.4);
 }
 
 /* Personal Training Page Styles */
@@ -2542,6 +3124,103 @@ body.splash-active {
     .premium-feature-card {
         width: 280px;
         padding: 40px 30px;
+    }
+    
+    .ladies-batch-section {
+        padding: 80px 20px;
+    }
+    
+    .ladies-batch-title {
+        font-size: 2rem;
+    }
+    
+    .ladies-batch-subtitle {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+    
+    .ladies-batch-timing {
+        flex-direction: column;
+        padding: 20px 30px;
+    }
+    
+    .timing-text {
+        text-align: center;
+    }
+    
+    .timing-value {
+        font-size: 1.5rem;
+    }
+    
+    .ladies-batch-features {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .ladies-feature-item {
+        padding: 25px 20px;
+    }
+    
+    .ladies-cta-button {
+        padding: 15px 40px;
+        font-size: 0.9rem;
+    }
+    
+    .premium-membership-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .premium-hero-cards {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .hero-pricing-card {
+        padding: 35px 30px;
+    }
+    
+    .hero-card-title {
+        font-size: 1.4rem;
+    }
+    
+    .hero-card-price .price-amount {
+        font-size: 2.5rem;
+    }
+    
+    .premium-training-section {
+        padding: 80px 20px;
+    }
+    
+    .training-section-title {
+        font-size: 1.8rem;
+    }
+    
+    .training-section-subtitle {
+        font-size: 1rem;
+        margin-bottom: 35px;
+    }
+    
+    .training-details-card {
+        padding: 40px 30px;
+    }
+    
+    .training-price-display .price-amount {
+        font-size: 3rem;
+    }
+    
+    .training-features-list li {
+        font-size: 1rem;
+        padding: 10px 0;
+    }
+    
+    .final-cta-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .final-cta-button {
+        width: 100%;
     }
     
     .premium-process-section {
