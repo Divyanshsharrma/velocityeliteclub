@@ -47,14 +47,47 @@
             <div class="premium-hero-content">
                 <h1 class="premium-hero-title">Elite Personal Coaching</h1>
                 <p class="premium-hero-subtitle">Personalized 1-to-1 coaching designed according to your goals, schedule, and lifestyle.</p>
-                <div class="premium-hero-price">
-                    <span class="price-highlight">₹9,999</span>
-                    <span class="price-period">/ Month</span>
+                
+                <div class="premium-hero-cards">
+                    <div class="hero-pricing-card men-card">
+                        <div class="hero-card-badge">FOR MEN</div>
+                        <h3 class="hero-card-title">Men's Personal Training</h3>
+                        <div class="hero-card-price">
+                            <span class="price-currency">₹</span>
+                            <span class="price-amount">9,999</span>
+                            <span class="price-period">/ Month</span>
+                        </div>
+                        <ul class="hero-card-features">
+                            <li>Personalized Training</li>
+                            <li>Gym Access</li>
+                            <li>Unlimited Pool Access</li>
+                            <li>1-to-1 Sessions</li>
+                            <li>Diet Guidance</li>
+                            <li>Flexible Scheduling</li>
+                        </ul>
+                        <button class="hero-cta-button men-cta" onclick="window.location.href='#mens-training'">Join Men's Training</button>
+                    </div>
+                    
+                    <div class="hero-pricing-card ladies-card">
+                        <div class="hero-card-badge ladies-badge">LADIES EXCLUSIVE</div>
+                        <h3 class="hero-card-title">Female Personal Training</h3>
+                        <div class="hero-card-price">
+                            <span class="price-currency">₹</span>
+                            <span class="price-amount">11,999</span>
+                            <span class="price-period">/ Month</span>
+                        </div>
+                        <ul class="hero-card-features">
+                            <li>Personalized Training</li>
+                            <li>Gym Access</li>
+                            <li>Unlimited Pool Access</li>
+                            <li>1-to-1 Sessions</li>
+                            <li>Diet Guidance</li>
+                            <li>Flexible Scheduling</li>
+                            <li>Female Exclusive Batch Support</li>
+                        </ul>
+                        <button class="hero-cta-button ladies-cta" onclick="window.location.href='#ladies-training'">Join Female Training</button>
+                    </div>
                 </div>
-                <p class="premium-hero-includes">Unlimited Pool + Gym Access Included</p>
-                <form>
-                    <script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_SwtdHkTZgEAiGW" async></script>
-                </form>
             </div>
             <div class="premium-hero-bg"></div>
         </section>
@@ -189,41 +222,117 @@
             </div>
         </section>
 
-        <!-- Section 5: Membership Card -->
-        <section class="premium-membership-section">
-            <div class="premium-membership-content">
-                <div class="premium-membership-card">
-                    <div class="membership-badge">ELITE</div>
-                    <h2 class="membership-title">Elite Personal Coaching</h2>
-                    <div class="membership-price">
+        <!-- Section 5: Men's Personal Training Section -->
+        <section class="premium-training-section" id="mens-training">
+            <div class="premium-training-content">
+                <div class="training-badge men-badge">FOR MEN</div>
+                <h2 class="training-section-title">Men's Personal Training</h2>
+                <p class="training-section-subtitle">Transform your fitness journey with personalized coaching designed for men's goals</p>
+                
+                <div class="training-details-card">
+                    <div class="training-price-display">
                         <span class="price-currency">₹</span>
                         <span class="price-amount">9,999</span>
                         <span class="price-period">/ Month</span>
                     </div>
-                    <ul class="membership-features">
-                        <li>Unlimited Pool Access</li>
-                        <li>Gym Access</li>
-                        <li>Personal Training</li>
-                        <li>Flexible Scheduling</li>
-                        <li>Diet Guidance</li>
-                        <li>1-to-1 Sessions</li>
-                        <li>Progress Tracking</li>
+                    
+                    <ul class="training-features-list">
+                        <li>
+                            <div class="feature-check">✓</div>
+                            <span>Personalized Training</span>
+                        </li>
+                        <li>
+                            <div class="feature-check">✓</div>
+                            <span>Gym Access</span>
+                        </li>
+                        <li>
+                            <div class="feature-check">✓</div>
+                            <span>Unlimited Pool Access</span>
+                        </li>
+                        <li>
+                            <div class="feature-check">✓</div>
+                            <span>1-to-1 Sessions</span>
+                        </li>
+                        <li>
+                            <div class="feature-check">✓</div>
+                            <span>Diet Guidance</span>
+                        </li>
+                        <li>
+                            <div class="feature-check">✓</div>
+                            <span>Flexible Scheduling</span>
+                        </li>
                     </ul>
-                    <form>
-                    <script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_SwtdHkTZgEAiGW" async></script>
-                </form>
+                    
+                    <form class="training-payment-form">
+                        <script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_SwtdHkTZgEAiGW" async></script>
+                    </form>
                 </div>
             </div>
         </section>
 
-        <!-- Section 6: Final CTA -->
+        <!-- Section 6: Female Personal Training Section -->
+        <section class="premium-training-section ladies-training-section" id="ladies-training">
+            <div class="premium-training-content">
+                <div class="training-badge ladies-badge">LADIES EXCLUSIVE</div>
+                <h2 class="training-section-title">Female Personal Training</h2>
+                <p class="training-section-subtitle">Premium fitness experience designed exclusively for women with dedicated batch support</p>
+                
+                <div class="training-details-card ladies-card">
+                    <div class="training-price-display">
+                        <span class="price-currency">₹</span>
+                        <span class="price-amount">11,999</span>
+                        <span class="price-period">/ Month</span>
+                    </div>
+                    
+                    <ul class="training-features-list">
+                        <li>
+                            <div class="feature-check">✓</div>
+                            <span>Personalized Training</span>
+                        </li>
+                        <li>
+                            <div class="feature-check">✓</div>
+                            <span>Gym Access</span>
+                        </li>
+                        <li>
+                            <div class="feature-check">✓</div>
+                            <span>Unlimited Pool Access</span>
+                        </li>
+                        <li>
+                            <div class="feature-check">✓</div>
+                            <span>1-to-1 Sessions</span>
+                        </li>
+                        <li>
+                            <div class="feature-check">✓</div>
+                            <span>Diet Guidance</span>
+                        </li>
+                        <li>
+                            <div class="feature-check">✓</div>
+                            <span>Flexible Scheduling</span>
+                        </li>
+                        <li>
+                            <div class="feature-check">✓</div>
+                            <span>Female Exclusive Batch Support (10:30 AM - 12:00 PM)</span>
+                        </li>
+                    </ul>
+                    
+                    <p class="limited-slots-highlight">Limited Slots Available</p>
+                    
+                    <form class="training-payment-form">
+                        <script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_SwtdHkTZgEAiGW" async></script>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 7: Final CTA -->
         <section class="premium-final-cta">
             <div class="premium-final-cta-content">
                 <h2 class="final-cta-title">Ready To Transform?</h2>
-                <p class="final-cta-subtitle">Book Your Consultation Today</p>
-                <form>
-                    <script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_SwtdHkTZgEAiGW" async></script>
-                </form>
+                <p class="final-cta-subtitle">Choose Your Personal Training Program</p>
+                <div class="final-cta-buttons">
+                    <button class="final-cta-button men-final-cta" onclick="window.location.href='#mens-training'">Join Men's Training</button>
+                    <button class="final-cta-button ladies-final-cta" onclick="window.location.href='#ladies-training'">Join Female Training</button>
+                </div>
             </div>
         </section>
 
