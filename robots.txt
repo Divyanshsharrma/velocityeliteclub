@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://velocityeliteclub.com/sitemap.xml
+
+# Disallow sensitive files
+Disallow: /private/
+Disallow: /admin/
+Disallow: /config/
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
