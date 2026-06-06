@@ -3,271 +3,354 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gym & Swimming Pool Membership Plans in Khurja | Best Fitness Club Membership</title>
-    <meta name="description" content="Explore affordable gym and swimming pool membership plans at Velocity Elite Club - Best fitness club in Khurja and Bulandshahr. Choose from gym, pool, and combo membership options with premium facilities.">
-    <meta name="keywords" content="gym membership khurja, swimming pool membership khurja, fitness club membership bulandshahr, gym plans khurja, pool membership bulandshahr, combo membership khurja, best gym membership plans, swimming pool pricing">
+    <title>Premium Membership Plans | Velocity Elite Club</title>
+    <meta name="description" content="Exclusive Gym + Swimming Pool membership packages at Velocity Elite Club. Choose from Silver, Gold, Diamond, and Platinum plans for premium fitness experience.">
+    <meta name="keywords" content="gym membership khurja, swimming pool membership, premium fitness club, elite gym membership, combo membership plans">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://velocityeliteclub.com/membership.html">
+    <link rel="canonical" href="https://velocityeliteclub.in/membership.html">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="icon" href="./logo.png">
     
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Gym & Swimming Pool Membership Plans in Khurja | Best Fitness Club Membership">
-    <meta property="og:description" content="Explore affordable gym and swimming pool membership plans at Velocity Elite Club - Best fitness club in Khurja and Bulandshahr. Choose from gym, pool, and combo membership options.">
+    <meta property="og:title" content="Premium Membership Plans | Velocity Elite Club">
+    <meta property="og:description" content="Exclusive Gym + Swimming Pool membership packages. Silver, Gold, Diamond, and Platinum plans available.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://velocityeliteclub.com/membership.html">
-    <meta property="og:image" content="https://velocityeliteclub.com/gym.jpeg">
+    <meta property="og:url" content="https://velocityeliteclub.in/membership.html">
+    <meta property="og:image" content="https://velocityeliteclub.in/gym.jpeg">
     
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Gym & Swimming Pool Membership Plans in Khurja">
-    <meta name="twitter:description" content="Explore affordable gym and swimming pool membership plans at Velocity Elite Club in Khurja and Bulandshahr.">
-    <meta name="twitter:image" content="https://velocityeliteclub.com/gym.jpeg">
+    <meta name="twitter:title" content="Premium Membership Plans">
+    <meta name="twitter:description" content="Exclusive Gym + Swimming Pool membership packages at Velocity Elite Club.">
+    <meta name="twitter:image" content="https://velocityeliteclub.in/gym.jpeg">
     
-    <!-- Local Business Schema Markup -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "SportsActivityLocation",
-        "name": "Velocity Elite Club",
-        "description": "Best gym in Khurja and Bulandshahr with premium swimming pool. World-class fitness center, personal training, and recreational club.",
-        "url": "https://velocityeliteclub.com",
-        "telephone": "+91-9548651997",
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Main Road Chandra Lok Colony",
-            "addressLocality": "Khurja",
-            "addressRegion": "Uttar Pradesh",
-            "postalCode": "203131",
-            "addressCountry": "IN"
-        },
-        "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": "28.25",
-            "longitude": "77.85"
-        },
-        "openingHours": "Mo-Su 06:00-22:00",
-        "priceRange": "₹₹",
-        "image": "https://velocityeliteclub.com/gym.jpeg",
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.8",
-            "reviewCount": "150"
-        },
-        "amenityFeature": [
-            {
-                "@type": "LocationFeatureSpecification",
-                "name": "Premium Gym",
-                "description": "State-of-the-art gym with modern equipment"
-            },
-            {
-                "@type": "LocationFeatureSpecification",
-                "name": "Swimming Pool",
-                "description": "Clean and well-maintained swimming pool"
-            },
-            {
-                "@type": "LocationFeatureSpecification",
-                "name": "Personal Training",
-                "description": "Expert 1-to-1 personal coaching"
-            }
-        ],
-        "areaServed": [
-            {
-                "@type": "City",
-                "name": "Khurja"
-            },
-            {
-                "@type": "City",
-                "name": "Bulandshahr"
-            }
-        ]
-    }
-    </script>
     <style>
-        .membership-page {
+        .premium-membership-page {
             min-height: 100vh;
             background: linear-gradient(135deg, #000 0%, #0a0a0a 50%, #000 100%);
-            padding: 100px 20px 60px;
+            padding: 120px 20px 80px;
+            position: relative;
+            overflow-x: hidden;
         }
         
-        .membership-header {
+        .premium-membership-page::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at center, rgba(0, 212, 255, 0.05) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        
+        .premium-header {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 80px;
             animation: fadeInUp 1s ease-out;
+            position: relative;
+            z-index: 1;
         }
         
-        .membership-title {
+        .premium-title {
             font-family: 'Oswald', sans-serif;
-            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-size: clamp(2.5rem, 7vw, 4.5rem);
             font-weight: 700;
             color: #00d4ff;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 1rem;
+            letter-spacing: 0.08em;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(45deg, #00d4ff, #0099ff, #00d4ff);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientShift 3s ease-in-out infinite;
         }
         
-        .membership-subtitle {
-            font-size: 1.2rem;
+        .premium-subtitle {
+            font-size: 1.3rem;
             color: #ccc;
             margin-bottom: 2rem;
             font-weight: 300;
-        }
-        
-        .back-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: rgba(0, 212, 255, 0.1);
-            border: 1px solid rgba(0, 212, 255, 0.3);
-            color: #00d4ff;
-            padding: 12px 24px;
-            text-decoration: none;
-            border-radius: 30px;
-            transition: all 0.3s ease;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 30px;
-        }
-        
-        .back-button:hover {
-            background: rgba(0, 212, 255, 0.2);
-            border-color: #00d4ff;
-            transform: translateX(-5px);
-        }
-        
-        .membership-details {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-        
-        .plan-section {
-            margin-bottom: 80px;
-        }
-        
-        .plan-section-title {
-            font-family: 'Oswald', sans-serif;
-            font-size: 2rem;
-            font-weight: 700;
-            color: #00d4ff;
-            text-transform: uppercase;
             letter-spacing: 0.05em;
-            margin-bottom: 40px;
-            text-align: center;
         }
         
-        .plan-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+        .premium-description {
+            font-size: 1rem;
+            color: #999;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.8;
         }
         
-        .plan-card {
-            background: linear-gradient(180deg, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.7) 100%);
-            border: 1px solid rgba(0, 212, 255, 0.15);
-            border-radius: 20px;
-            padding: 50px 40px;
-            text-align: center;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        .premium-cards-container {
+            max-width: 1600px;
+            margin: 0 auto;
             position: relative;
-            backdrop-filter: blur(10px);
+            z-index: 1;
         }
         
-        .plan-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 25px 50px rgba(0, 212, 255, 0.15);
-            border-color: rgba(0, 212, 255, 0.3);
+        .premium-cards-scroll {
+            display: flex;
+            gap: 40px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            padding: 40px 20px;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(0, 212, 255, 0.3) transparent;
         }
         
-        .plan-card.featured {
+        .premium-cards-scroll::-webkit-scrollbar {
+            height: 8px;
+        }
+        
+        .premium-cards-scroll::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+        }
+        
+        .premium-cards-scroll::-webkit-scrollbar-thumb {
+            background: linear-gradient(90deg, #00d4ff, #0099ff);
+            border-radius: 10px;
+        }
+        
+        .premium-card {
+            flex: 0 0 auto;
+            min-width: 300px;
+            max-width: 340px;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.85) 100%);
+            border: 2px solid rgba(0, 212, 255, 0.2);
+            border-radius: 25px;
+            padding: 45px 35px;
+            text-align: center;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            backdrop-filter: blur(20px);
+            scroll-snap-align: center;
+            overflow: hidden;
+        }
+        
+        .premium-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            pointer-events: none;
+        }
+        
+        .premium-card:hover::before {
+            opacity: 1;
+        }
+        
+        .premium-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 30px 60px rgba(0, 212, 255, 0.25);
+            border-color: rgba(0, 212, 255, 0.5);
+        }
+        
+        .premium-card.silver {
+            border-color: rgba(192, 192, 192, 0.3);
+        }
+        
+        .premium-card.silver:hover {
+            border-color: rgba(192, 192, 192, 0.6);
+            box-shadow: 0 30px 60px rgba(192, 192, 192, 0.2);
+        }
+        
+        .premium-card.gold {
+            border-color: rgba(255, 215, 0, 0.3);
+        }
+        
+        .premium-card.gold:hover {
+            border-color: rgba(255, 215, 0, 0.6);
+            box-shadow: 0 30px 60px rgba(255, 215, 0, 0.25);
+        }
+        
+        .premium-card.diamond {
             border-color: rgba(0, 212, 255, 0.4);
             box-shadow: 0 25px 50px rgba(0, 212, 255, 0.2);
         }
         
-        .plan-badge {
+        .premium-card.diamond:hover {
+            border-color: rgba(0, 212, 255, 0.7);
+            box-shadow: 0 35px 70px rgba(0, 212, 255, 0.35);
+        }
+        
+        .premium-card.platinum {
+            border-color: rgba(229, 228, 226, 0.4);
+            box-shadow: 0 25px 50px rgba(229, 228, 226, 0.15);
+        }
+        
+        .premium-card.platinum:hover {
+            border-color: rgba(229, 228, 226, 0.7);
+            box-shadow: 0 35px 70px rgba(229, 228, 226, 0.25);
+        }
+        
+        .premium-badge {
             display: inline-block;
-            background: linear-gradient(45deg, #00d4ff, #0099ff);
-            color: #fff;
-            padding: 5px 15px;
+            padding: 6px 20px;
             border-radius: 20px;
             font-size: 0.75rem;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.15em;
             margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
         }
         
-        .plan-badge.popular {
-            background: linear-gradient(45deg, #ff3366, #ff6b6b);
+        .premium-badge.silver {
+            background: linear-gradient(45deg, #c0c0c0, #a8a8a8);
+            color: #000;
         }
         
-        .plan-name {
+        .premium-badge.gold {
+            background: linear-gradient(45deg, #ffd700, #ffb700);
+            color: #000;
+        }
+        
+        .premium-badge.diamond {
+            background: linear-gradient(45deg, #00d4ff, #0099ff);
+            color: #fff;
+        }
+        
+        .premium-badge.platinum {
+            background: linear-gradient(45deg, #e5e4e2, #d4d3d0);
+            color: #000;
+        }
+        
+        .premium-card-name {
             font-family: 'Oswald', sans-serif;
             font-size: 1.8rem;
             font-weight: 700;
             color: #fff;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.08em;
             margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
         }
         
-        .plan-price {
-            margin-bottom: 30px;
+        .premium-card.silver .premium-card-name {
+            color: #c0c0c0;
         }
         
-        .price-currency {
-            font-size: 1.5rem;
+        .premium-card.gold .premium-card-name {
+            color: #ffd700;
+        }
+        
+        .premium-card.diamond .premium-card-name {
             color: #00d4ff;
-            vertical-align: top;
         }
         
-        .price-amount {
+        .premium-card.platinum .premium-card-name {
+            color: #e5e4e2;
+        }
+        
+        .premium-price-section {
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .premium-currency {
+            font-size: 1.5rem;
+            vertical-align: top;
+            margin-right: 5px;
+        }
+        
+        .premium-amount {
             font-family: 'Oswald', sans-serif;
             font-size: 3rem;
             font-weight: 700;
+            line-height: 1;
+        }
+        
+        .premium-card.silver .premium-currency,
+        .premium-card.silver .premium-amount {
+            color: #c0c0c0;
+        }
+        
+        .premium-card.gold .premium-currency,
+        .premium-card.gold .premium-amount {
+            color: #ffd700;
+        }
+        
+        .premium-card.diamond .premium-currency,
+        .premium-card.diamond .premium-amount {
             color: #00d4ff;
         }
         
-        .price-period {
-            font-size: 1rem;
-            color: #666;
+        .premium-card.platinum .premium-currency,
+        .premium-card.platinum .premium-amount {
+            color: #e5e4e2;
         }
         
-        .plan-features {
+        .premium-duration {
+            font-size: 1rem;
+            color: #999;
+            margin-top: 8px;
+            font-weight: 300;
+        }
+        
+        .premium-features {
             list-style: none;
             padding: 0;
             margin: 0 0 30px;
             text-align: left;
+            position: relative;
+            z-index: 1;
         }
         
-        .plan-features li {
+        .premium-features li {
             color: #ccc;
             font-size: 0.95rem;
             margin-bottom: 14px;
-            padding-left: 28px;
+            padding-left: 30px;
             position: relative;
-            font-weight: 300;
+            font-weight: 400;
             line-height: 1.6;
         }
         
-        .plan-features li::before {
-            content: '';
+        .premium-features li::before {
+            content: '✓';
             position: absolute;
             left: 0;
-            top: 8px;
-            width: 8px;
-            height: 8px;
-            background: linear-gradient(135deg, #00d4ff, #0099ff);
-            border-radius: 50%;
-            box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+            top: 2px;
+            font-size: 1rem;
+            font-weight: 700;
         }
         
-        .plan-button {
+        .premium-card.silver .premium-features li::before {
+            color: #c0c0c0;
+        }
+        
+        .premium-card.gold .premium-features li::before {
+            color: #ffd700;
+        }
+        
+        .premium-card.diamond .premium-features li::before {
+            color: #00d4ff;
+        }
+        
+        .premium-card.platinum .premium-features li::before {
+            color: #e5e4e2;
+        }
+        
+        .premium-button {
             background: linear-gradient(135deg, #00d4ff 0%, #0099ff 100%);
             color: #fff;
             border: none;
-            padding: 16px 35px;
+            padding: 14px 35px;
             font-size: 0.9rem;
             font-weight: 600;
             text-transform: uppercase;
@@ -278,74 +361,241 @@
             width: 100%;
             text-decoration: none;
             display: inline-block;
-            box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+            box-shadow: 0 5px 20px rgba(0, 212, 255, 0.4);
+            position: relative;
+            z-index: 1;
         }
         
-        .plan-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0, 212, 255, 0.4);
+        .premium-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
         }
         
-        .plan-button.featured {
-            background: linear-gradient(45deg, #ff3366, #ff6b6b);
+        .premium-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.5);
         }
         
-        .plan-button.featured:hover {
-            box-shadow: 0 10px 30px rgba(255, 51, 102, 0.3);
+        .premium-button:hover::before {
+            left: 100%;
         }
         
-        .faq-section {
-            max-width: 800px;
-            margin: 0 auto 60px;
+        .premium-card.silver .premium-button {
+            background: linear-gradient(135deg, #c0c0c0 0%, #a8a8a8 100%);
+            box-shadow: 0 5px 20px rgba(192, 192, 192, 0.3);
         }
         
-        .faq-title {
-            font-family: 'Oswald', sans-serif;
-            font-size: 2rem;
-            font-weight: 700;
-            color: #00d4ff;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 40px;
+        .premium-card.silver .premium-button:hover {
+            box-shadow: 0 10px 30px rgba(192, 192, 192, 0.4);
+        }
+        
+        .premium-card.gold .premium-button {
+            background: linear-gradient(135deg, #ffd700 0%, #ffb700 100%);
+            box-shadow: 0 5px 20px rgba(255, 215, 0, 0.3);
+        }
+        
+        .premium-card.gold .premium-button:hover {
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
+        }
+        
+        .premium-card.platinum .premium-button {
+            background: linear-gradient(135deg, #e5e4e2 0%, #d4d3d0 100%);
+            color: #000;
+            box-shadow: 0 5px 20px rgba(229, 228, 226, 0.3);
+        }
+        
+        .premium-card.platinum .premium-button:hover {
+            box-shadow: 0 10px 30px rgba(229, 228, 226, 0.4);
+        }
+        
+        .scroll-indicator {
             text-align: center;
+            margin-top: 40px;
+            color: #666;
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            animation: fadeInUp 1s ease-out 0.5s both;
         }
         
-        .faq-item {
-            background: rgba(0, 0, 0, 0.8);
-            border: 1px solid rgba(0, 212, 255, 0.2);
-            border-radius: 15px;
-            padding: 25px;
-            margin-bottom: 20px;
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         
-        .faq-question {
-            font-family: 'Oswald', sans-serif;
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #00d4ff;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-        
-        .faq-answer {
-            color: #ccc;
-            font-size: 1rem;
-            line-height: 1.6;
-            font-weight: 300;
+        @keyframes gradientShift {
+            0%, 100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
         }
         
         @media (max-width: 768px) {
-            .membership-page {
-                padding: 80px 20px 40px;
+            .premium-membership-page {
+                padding: 100px 15px 60px;
             }
             
-            .plan-cards {
-                grid-template-columns: 1fr;
+            .premium-cards-scroll {
+                gap: 20px;
+                padding: 30px 15px;
             }
             
-            .price-amount {
+            .premium-card {
+                min-width: 85vw;
+                max-width: 90vw;
+                padding: 40px 30px;
+            }
+            
+            .premium-amount {
+                font-size: 2.8rem;
+            }
+            
+            .premium-card-name {
+                font-size: 1.6rem;
+            }
+            
+            .premium-features li {
+                font-size: 0.9rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .premium-card {
+                min-width: 90vw;
+                max-width: 95vw;
+                padding: 35px 25px;
+            }
+            
+            .premium-amount {
                 font-size: 2.5rem;
+            }
+            
+            .premium-card-name {
+                font-size: 1.4rem;
+            }
+        }
+        
+        @media (min-width: 1400px) {
+            .premium-card {
+                min-width: 320px;
+                max-width: 360px;
+            }
+        }
+
+        .terms-agreement {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(0, 212, 255, 0.2);
+            position: relative;
+            z-index: 10;
+        }
+
+        .terms-checkbox-wrapper {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 11;
+        }
+
+        .terms-checkbox {
+            width: 20px;
+            height: 20px;
+            min-width: 20px;
+            margin-top: 2px;
+            accent-color: #00d4ff;
+            cursor: pointer;
+            border: 2px solid rgba(0, 212, 255, 0.5);
+            border-radius: 4px;
+            background: rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 12;
+        }
+
+        .terms-checkbox:hover {
+            border-color: #00d4ff;
+            box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+        }
+
+        .terms-checkbox:checked {
+            background: #00d4ff;
+            border-color: #00d4ff;
+        }
+
+        .terms-label {
+            color: #ccc;
+            font-size: 0.85rem;
+            line-height: 1.5;
+            font-weight: 300;
+            cursor: pointer;
+            user-select: none;
+            position: relative;
+            z-index: 12;
+        }
+
+        .terms-label a {
+            color: #00d4ff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .terms-label a:hover {
+            color: #0099ff;
+            text-decoration: underline;
+        }
+
+        .premium-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            pointer-events: none;
+            box-shadow: none !important;
+        }
+
+        .razorpay-payment-form {
+            pointer-events: none;
+            opacity: 0.5;
+            transition: all 0.3s ease;
+        }
+
+        .razorpay-payment-form.active {
+            pointer-events: auto;
+            opacity: 1;
+        }
+
+        .razorpay-payment-form form {
+            display: flex;
+            justify-content: center;
+        }
+
+        @media (max-width: 768px) {
+            .terms-checkbox-wrapper {
+                gap: 10px;
+            }
+
+            .terms-checkbox {
+                width: 18px;
+                height: 18px;
+                min-width: 18px;
+            }
+
+            .terms-label {
+                font-size: 0.8rem;
             }
         }
     </style>
@@ -356,7 +606,7 @@
         <div class="nav-container">
             <div class="nav-brand">
                 <a href="index.html" class="logo-link">
-                    <img src="logo.png" alt="Velocity Elite Club - Best Gym and Swimming Pool in Khurja" class="logo-image" loading="eager">
+                    <img src="logo.png" alt="Velocity Elite Club" class="logo-image" loading="eager">
                 </a>
             </div>
             <button class="mobile-menu-btn" id="mobileMenuBtn">
@@ -370,231 +620,145 @@
                 <li><a href="index.html#gym" class="nav-link">Gym</a></li>
                 <li><a href="index.html#pool" class="nav-link">Swimming Pool</a></li>
                 <li><a href="index.html#facilities" class="nav-link">Facilities</a></li>
-                <li><a href="index.html#membership" class="nav-link">Membership</a></li>
+                <li><a href="membership.html" class="nav-link">Membership</a></li>
                 <li><a href="index.html#booking" class="nav-link">Booking</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <div class="membership-page">
-        <div class="membership-header">
-            <a href="index.html" class="back-button">← Back to Home</a>
-            <h1 class="membership-title">Membership Plans</h1>
-            <p class="membership-subtitle">Choose the perfect plan for your fitness journey</p>
+    <div class="premium-membership-page">
+        <div class="premium-header">
+            <h1 class="premium-title">Premium Membership</h1>
+            <p class="premium-subtitle">Gym + Swimming Pool Access</p>
+            <p class="premium-description">Experience the ultimate fitness journey with our exclusive membership packages. Choose the perfect plan that suits your lifestyle and goals.</p>
         </div>
         
-        <div class="membership-details">
-            <!-- Gym Plans -->
-            <div class="plan-section">
-                <h2 class="plan-section-title">Gym Membership Plans in Khurja</h2>
-                <div class="plan-cards">
-                    <div class="plan-card">
-                        <div class="plan-badge">BASIC</div>
-                        <h3 class="plan-name">Gym Basic</h3>
-                        <div class="plan-price">
-                            <span class="price-currency">₹</span>
-                            <span class="price-amount">1,999</span>
-                            <span class="price-period">/month</span>
-                        </div>
-                        <ul class="plan-features">
-                            <li>Gym Access (6 AM - 10 PM)</li>
-                            <li>Basic Equipment</li>
-                            <li>Locker Access</li>
-                            <li>1 Group Class/Week</li>
-                        </ul>
-                        <a href="gym-booking.html" class="plan-button">Choose Plan</a>
+        <div class="premium-cards-container">
+            <div class="premium-cards-scroll">
+                <!-- Silver Package -->
+                <div class="premium-card silver">
+                    <div class="premium-badge silver">Silver</div>
+                    <h2 class="premium-card-name">Silver Package</h2>
+                    <div class="premium-price-section">
+                        <span class="premium-currency">₹</span>
+                        <span class="premium-amount">3,499</span>
+                        <div class="premium-duration">1 Month</div>
                     </div>
-                    
-                    <div class="plan-card featured">
-                        <div class="plan-badge popular">POPULAR</div>
-                        <h3 class="plan-name">Gym Pro</h3>
-                        <div class="plan-price">
-                            <span class="price-currency">₹</span>
-                            <span class="price-amount">2,499</span>
-                            <span class="price-period">/month</span>
+                    <ul class="premium-features">
+                        <li>Gym Access</li>
+                        <li>Swimming Pool Access</li>
+                        <li>Shower Access</li>
+                    </ul>
+                    <div class="terms-agreement">
+                        <div class="terms-checkbox-wrapper">
+                            <input type="checkbox" class="terms-checkbox" id="terms-silver">
+                            <label for="terms-silver" class="terms-label">I have read and agree to the <a href="terms-conditions.html" target="_blank">Terms & Conditions</a></label>
                         </div>
-                        <ul class="plan-features">
-                            <li>24/7 Gym Access</li>
-                            <li>All Equipment</li>
-                            <li>Locker & Shower</li>
-                            <li>Unlimited Group Classes</li>
-                            <li>1 PT Session/Month</li>
-                            <li>Nutrition Plan</li>
-                        </ul>
-                        <a href="gym-booking.html" class="plan-button featured">Choose Plan</a>
+                        <div class="razorpay-payment-form" id="payment-silver">
+                            <form>
+                                <script src="https://checkout.razorpay.com/v1/payment-button.js"
+                                data-payment_button_id="pl_SyE1lSyNNG7WwM"
+                                async>
+                                </script>
+                            </form>
+                        </div>
                     </div>
-                    
-                    <div class="plan-card">
-                        <div class="plan-badge">PREMIUM</div>
-                        <h3 class="plan-name">Gym Elite</h3>
-                        <div class="plan-price">
-                            <span class="price-currency">₹</span>
-                            <span class="price-amount">3,999</span>
-                            <span class="price-period">/month</span>
+                </div>
+                
+                <!-- Gold Package -->
+                <div class="premium-card gold">
+                    <div class="premium-badge gold">Gold</div>
+                    <h2 class="premium-card-name">Gold Package</h2>
+                    <div class="premium-price-section">
+                        <span class="premium-currency">₹</span>
+                        <span class="premium-amount">7,499</span>
+                        <div class="premium-duration">3 Months</div>
+                    </div>
+                    <ul class="premium-features">
+                        <li>Gym Access</li>
+                        <li>Swimming Pool Access</li>
+                        <li>Shower Access</li>
+                    </ul>
+                    <div class="terms-agreement">
+                        <div class="terms-checkbox-wrapper">
+                            <input type="checkbox" class="terms-checkbox" id="terms-gold">
+                            <label for="terms-gold" class="terms-label">I have read and agree to the <a href="terms-conditions.html" target="_blank">Terms & Conditions</a></label>
                         </div>
-                        <ul class="plan-features">
-                            <li>24/7 Gym Access</li>
-                            <li>All Premium Equipment</li>
-                            <li>Private Locker</li>
-                            <li>Unlimited Classes</li>
-                            <li>4 PT Sessions/Month</li>
-                            <li>Personal Nutrition Coach</li>
-                            <li>Guest Pass (2/month)</li>
-                        </ul>
-                        <a href="gym-booking.html" class="plan-button">Choose Plan</a>
+                        <div class="razorpay-payment-form" id="payment-gold">
+                            <form>
+                                <script src="https://checkout.razorpay.com/v1/payment-button.js"
+                                data-payment_button_id="pl_SyEK3rLB1iWEDx"
+                                async>
+                                </script>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Diamond Package -->
+                <div class="premium-card diamond">
+                    <div class="premium-badge diamond">Diamond</div>
+                    <h2 class="premium-card-name">Diamond Package</h2>
+                    <div class="premium-price-section">
+                        <span class="premium-currency">₹</span>
+                        <span class="premium-amount">11,999</span>
+                        <div class="premium-duration">6 Months</div>
+                    </div>
+                    <ul class="premium-features">
+                        <li>Gym Access</li>
+                        <li>Swimming Pool Access</li>
+                        <li>Shower Access</li>
+                    </ul>
+                    <div class="terms-agreement">
+                        <div class="terms-checkbox-wrapper">
+                            <input type="checkbox" class="terms-checkbox" id="terms-diamond">
+                            <label for="terms-diamond" class="terms-label">I have read and agree to the <a href="terms-conditions.html" target="_blank">Terms & Conditions</a></label>
+                        </div>
+                        <div class="razorpay-payment-form" id="payment-diamond">
+                            <form>
+                                <script src="https://checkout.razorpay.com/v1/payment-button.js"
+                                data-payment_button_id="pl_SyETOSUPWrh7kW"
+                                async>
+                                </script>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Platinum Package -->
+                <div class="premium-card platinum">
+                    <div class="premium-badge platinum">Platinum</div>
+                    <h2 class="premium-card-name">Platinum Package</h2>
+                    <div class="premium-price-section">
+                        <span class="premium-currency">₹</span>
+                        <span class="premium-amount">17,999</span>
+                        <div class="premium-duration">12 Months</div>
+                    </div>
+                    <ul class="premium-features">
+                        <li>Gym Access</li>
+                        <li>Swimming Pool Access</li>
+                        <li>Shower Access</li>
+                    </ul>
+                    <div class="terms-agreement">
+                        <div class="terms-checkbox-wrapper">
+                            <input type="checkbox" class="terms-checkbox" id="terms-platinum">
+                            <label for="terms-platinum" class="terms-label">I have read and agree to the <a href="terms-conditions.html" target="_blank">Terms & Conditions</a></label>
+                        </div>
+                        <div class="razorpay-payment-form" id="payment-platinum">
+                            <form>
+                                <script src="https://checkout.razorpay.com/v1/payment-button.js"
+                                data-payment_button_id="pl_SyEb9q7J1ElOaX"
+                                async>
+                                </script>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
             
-            <!-- Pool Plans -->
-            <div class="plan-section">
-                <h2 class="plan-section-title">Swimming Pool Plans</h2>
-                <div class="plan-cards">
-                    <div class="plan-card">
-                        <div class="plan-badge">BASIC</div>
-                        <h3 class="plan-name">Pool Basic</h3>
-                        <div class="plan-price">
-                            <span class="price-currency">₹</span>
-                            <span class="price-amount">1,499</span>
-                            <span class="price-period">/month</span>
-                        </div>
-                        <ul class="plan-features">
-                            <li>Pool Access (6 AM - 9 PM)</li>
-                            <li>Lap Swimming</li>
-                            <li>Locker Access</li>
-                            <li>1 Aqua Class/Week</li>
-                        </ul>
-                        <a href="pool-booking.html" class="plan-button">Choose Plan</a>
-                    </div>
-                    
-                    <div class="plan-card featured">
-                        <div class="plan-badge popular">POPULAR</div>
-                        <h3 class="plan-name">Pool Pro</h3>
-                        <div class="plan-price">
-                            <span class="price-currency">₹</span>
-                            <span class="price-amount">1,999</span>
-                            <span class="price-period">/month</span>
-                        </div>
-                        <ul class="plan-features">
-                            <li>Unlimited Pool Access</li>
-                            <li>Recreational Swimming</li>
-                            <li>Locker & Shower</li>
-                            <li>Family-Friendly Environment</li>
-                            <li>Relaxing Atmosphere</li>
-                            <li>Family Swim Time</li>
-                        </ul>
-                        <a href="pool-booking.html" class="plan-button featured">Choose Plan</a>
-                    </div>
-                    
-                    <div class="plan-card">
-                        <div class="plan-badge">PREMIUM</div>
-                        <h3 class="plan-name">Pool Elite</h3>
-                        <div class="plan-price">
-                            <span class="price-currency">₹</span>
-                            <span class="price-amount">2,999</span>
-                            <span class="price-period">/month</span>
-                        </div>
-                        <ul class="plan-features">
-                            <li>Unlimited Pool Access</li>
-                            <li>Recreational Swimming</li>
-                            <li>Private Locker</li>
-                            <li>Priority Booking</li>
-                            <li>Family Pass (4 members)</li>
-                            <li>Extended Hours Access</li>
-                        </ul>
-                        <a href="pool-booking.html" class="plan-button">Choose Plan</a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Combo Plans -->
-            <div class="plan-section">
-                <h2 class="plan-section-title">Gym + Swimming Pool Combo Plans in Khurja</h2>
-                <div class="plan-cards">
-                    <div class="plan-card">
-                        <div class="plan-badge">VALUE</div>
-                        <h3 class="plan-name">Combo Starter</h3>
-                        <div class="plan-price">
-                            <span class="price-currency">₹</span>
-                            <span class="price-amount">2,999</span>
-                            <span class="price-period">/month</span>
-                        </div>
-                        <ul class="plan-features">
-                            <li>Gym (6 AM - 10 PM)</li>
-                            <li>Pool (6 AM - 9 PM)</li>
-                            <li>Basic Equipment</li>
-                            <li>Locker Access</li>
-                            <li>2 Group Classes/Week</li>
-                        </ul>
-                        <a href="index.html#booking" class="plan-button">Choose Plan</a>
-                    </div>
-                    
-                    <div class="plan-card featured">
-                        <div class="plan-badge popular">BEST VALUE</div>
-                        <h3 class="plan-name">Combo Elite</h3>
-                        <div class="plan-price">
-                            <span class="price-currency">₹</span>
-                            <span class="price-amount">3,499</span>
-                            <span class="price-period">/month</span>
-                        </div>
-                        <ul class="plan-features">
-                            <li>24/7 Gym Access</li>
-                            <li>Unlimited Pool Access</li>
-                            <li>All Equipment & Activities</li>
-                            <li>Locker & Shower</li>
-                            <li>Unlimited Classes</li>
-                            <li>2 PT Sessions/Month</li>
-                            <li>Recreational Swimming</li>
-                            <li>Nutrition Plan</li>
-                            <li>Guest Pass (2/month)</li>
-                        </ul>
-                        <a href="index.html#booking" class="plan-button featured">Choose Plan</a>
-                    </div>
-                    
-                    <div class="plan-card">
-                        <div class="plan-badge">ULTIMATE</div>
-                        <h3 class="plan-name">Combo Ultimate</h3>
-                        <div class="plan-price">
-                            <span class="price-currency">₹</span>
-                            <span class="price-amount">4,999</span>
-                            <span class="price-period">/month</span>
-                        </div>
-                        <ul class="plan-features">
-                            <li>24/7 Gym & Pool Access</li>
-                            <li>All Premium Equipment</li>
-                            <li>Private Locker</li>
-                            <li>Unlimited Classes</li>
-                            <li>4 PT Sessions/Month</li>
-                            <li>Private Swimming Coach</li>
-                            <li>Personal Nutrition Coach</li>
-                            <li>Guest Pass (4/month)</li>
-                            <li>Spa Access</li>
-                        </ul>
-                        <a href="index.html#booking" class="plan-button">Choose Plan</a>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- FAQ Section -->
-            <div class="faq-section">
-                <h2 class="faq-title">Frequently Asked Questions</h2>
-                <div class="faq-item">
-                    <div class="faq-question">Can I switch between plans?</div>
-                    <div class="faq-answer">Yes, you can upgrade or downgrade your membership plan at any time. The difference will be prorated accordingly.</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">Is there a joining fee?</div>
-                    <div class="faq-answer">We offer zero joining fee for all annual memberships. Monthly plans have a nominal registration fee of ₹499.</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">Can I freeze my membership?</div>
-                    <div class="faq-answer">Yes, you can freeze your membership for up to 30 days per year for medical reasons or travel, with proper documentation.</div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">What payment methods do you accept?</div>
-                    <div class="faq-answer">We accept all major credit/debit cards, UPI, net banking, and EMI options through Razorpay payment gateway.</div>
-                </div>
+            <div class="scroll-indicator">
+                ← Swipe to explore all packages →
             </div>
         </div>
     </div>
@@ -624,10 +788,9 @@
                 <div class="footer-links-section">
                     <h4>Membership</h4>
                     <ul class="footer-links">
-                        <li><a href="index.html#membership" class="footer-link">Gym Plans</a></li>
-                        <li><a href="index.html#membership" class="footer-link">Pool Plans</a></li>
-                        <li><a href="index.html#membership" class="footer-link">Combo Plans</a></li>
+                        <li><a href="membership.html" class="footer-link">Premium Plans</a></li>
                         <li><a href="index.html#booking" class="footer-link">Book Trial</a></li>
+                        <li><a href="contact.html" class="footer-link">Contact Us</a></li>
                     </ul>
                 </div>
                 <div class="footer-links-section">
@@ -636,7 +799,6 @@
                         <li><a href="privacy-policy.html" class="footer-link">Privacy Policy</a></li>
                         <li><a href="terms-conditions.html" class="footer-link">Terms & Conditions</a></li>
                         <li><a href="refund-policy.html" class="footer-link">Refund Policy</a></li>
-                        <li><a href="contact.html" class="footer-link">Contact Us</a></li>
                     </ul>
                 </div>
             </div>
@@ -653,5 +815,31 @@
     </footer>
     
     <script src="script.js"></script>
+    <script>
+        // Terms checkbox functionality for membership page
+        document.addEventListener('DOMContentLoaded', function() {
+            const checkboxFormPairs = [
+                { checkbox: 'terms-silver', form: 'payment-silver' },
+                { checkbox: 'terms-gold', form: 'payment-gold' },
+                { checkbox: 'terms-diamond', form: 'payment-diamond' },
+                { checkbox: 'terms-platinum', form: 'payment-platinum' }
+            ];
+
+            checkboxFormPairs.forEach(pair => {
+                const checkbox = document.getElementById(pair.checkbox);
+                const paymentForm = document.getElementById(pair.form);
+
+                if (checkbox && paymentForm) {
+                    checkbox.addEventListener('change', function() {
+                        if (this.checked) {
+                            paymentForm.classList.add('active');
+                        } else {
+                            paymentForm.classList.remove('active');
+                        }
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
