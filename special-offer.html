@@ -289,6 +289,89 @@
                 margin-bottom: 12px;
             }
         }
+
+        .terms-agreement {
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        .terms-checkbox-wrapper {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .terms-checkbox {
+            width: 20px;
+            height: 20px;
+            min-width: 20px;
+            margin-top: 2px;
+            accent-color: #00d4ff;
+            cursor: pointer;
+            border: 2px solid rgba(0, 212, 255, 0.5);
+            border-radius: 4px;
+            background: rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .terms-checkbox:hover {
+            border-color: #00d4ff;
+            box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+        }
+
+        .terms-checkbox:checked {
+            background: #00d4ff;
+            border-color: #00d4ff;
+        }
+
+        .terms-label {
+            color: #ccc;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            font-weight: 300;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .terms-label a {
+            color: #00d4ff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .terms-label a:hover {
+            color: #0099ff;
+            text-decoration: underline;
+        }
+
+        .offer-card-content form {
+            pointer-events: none;
+            opacity: 0.5;
+        }
+
+        .offer-card-content.active form {
+            pointer-events: auto;
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .terms-checkbox-wrapper {
+                gap: 10px;
+            }
+
+            .terms-checkbox {
+                width: 18px;
+                height: 18px;
+                min-width: 18px;
+            }
+
+            .terms-label {
+                font-size: 0.85rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -322,7 +405,13 @@
                         Secure your membership today with this limited-time offer.
                     </p>
                     
-                    <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_Sw51JWa1OAMVm5" async> </script> </form>
+                    <div class="terms-agreement">
+                        <div class="terms-checkbox-wrapper">
+                            <input type="checkbox" class="terms-checkbox" id="terms-offer">
+                            <label for="terms-offer" class="terms-label">I have read and agree to the <a href="terms-conditions.html" target="_blank">Terms & Conditions</a></label>
+                        </div>
+                        <form id="payment-offer"><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_Sw51JWa1OAMVm5" async> </script> </form>
+                    </div>
                     
                     <a href="index.html" class="back-button">← Back to Home</a>
                 </div>
@@ -331,5 +420,23 @@
     </section>
 
     <script src="script.js"></script>
+    <script>
+        // Terms checkbox functionality for special offer page
+        document.addEventListener('DOMContentLoaded', function() {
+            const checkbox = document.getElementById('terms-offer');
+            const paymentForm = document.getElementById('payment-offer');
+            const offerCardContent = document.querySelector('.offer-card-content');
+
+            if (checkbox && paymentForm && offerCardContent) {
+                checkbox.addEventListener('change', function() {
+                    if (this.checked) {
+                        offerCardContent.classList.add('active');
+                    } else {
+                        offerCardContent.classList.remove('active');
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>
