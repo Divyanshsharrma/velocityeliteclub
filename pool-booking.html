@@ -3,9 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Your Pool Session - Velocity Pool</title>
+    <title>Book Swimming Pool Session in Khurja | Best Pool Membership | Velocity Elite Club</title>
+    <meta name="description" content="Book your swimming pool session at Velocity Elite Club - Best swimming pool in Khurja and Bulandshahr. Enjoy premium pool facilities, recreational swimming, and family-friendly environment.">
+    <meta name="keywords" content="swimming pool booking khurja, pool session bulandshahr, book pool khurja, swimming pool membership khurja, pool near me booking, best swimming pool khurja, recreational swimming booking">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://velocityeliteclub.com/pool-booking.html">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="./logo.png">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Book Swimming Pool Session in Khurja | Best Pool Membership">
+    <meta property="og:description" content="Book your swimming pool session at Velocity Elite Club - Best swimming pool in Khurja and Bulandshahr. Enjoy premium pool facilities and recreational swimming.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://velocityeliteclub.com/pool-booking.html">
+    <meta property="og:image" content="https://velocityeliteclub.com/swimming pool.jpeg">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Book Swimming Pool Session in Khurja">
+    <meta name="twitter:description" content="Book your swimming pool session at Velocity Elite Club in Khurja and Bulandshahr. Enjoy premium pool facilities.">
+    <meta name="twitter:image" content="https://velocityeliteclub.com/swimming pool.jpeg">
+    
+    <!-- Local Business Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SportsActivityLocation",
+        "name": "Velocity Elite Club",
+        "description": "Best gym in Khurja and Bulandshahr with premium swimming pool. World-class fitness center, personal training, and recreational club.",
+        "url": "https://velocityeliteclub.com",
+        "telephone": "+91-9548651997",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Main Road Chandra Lok Colony",
+            "addressLocality": "Khurja",
+            "addressRegion": "Uttar Pradesh",
+            "postalCode": "203131",
+            "addressCountry": "IN"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "28.25",
+            "longitude": "77.85"
+        },
+        "openingHours": "Mo-Su 06:00-22:00",
+        "priceRange": "₹₹",
+        "image": "https://velocityeliteclub.com/gym.jpeg",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "reviewCount": "150"
+        },
+        "amenityFeature": [
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Premium Gym",
+                "description": "State-of-the-art gym with modern equipment"
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Swimming Pool",
+                "description": "Clean and well-maintained swimming pool"
+            },
+            {
+                "@type": "LocationFeatureSpecification",
+                "name": "Personal Training",
+                "description": "Expert 1-to-1 personal coaching"
+            }
+        ],
+        "areaServed": [
+            {
+                "@type": "City",
+                "name": "Khurja"
+            },
+            {
+                "@type": "City",
+                "name": "Bulandshahr"
+            }
+        ]
+    }
+    </script>
     <style>
         .booking-page {
             min-height: 100vh;
@@ -264,6 +342,87 @@
                 max-width: 300px;
             }
         }
+
+        .terms-agreement {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        .terms-checkbox-wrapper {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+
+        .terms-checkbox {
+            width: 20px;
+            height: 20px;
+            min-width: 20px;
+            margin-top: 2px;
+            accent-color: #00d4ff;
+            cursor: pointer;
+            border: 2px solid rgba(0, 212, 255, 0.5);
+            border-radius: 4px;
+            background: rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .terms-checkbox:hover {
+            border-color: #00d4ff;
+            box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+        }
+
+        .terms-checkbox:checked {
+            background: #00d4ff;
+            border-color: #00d4ff;
+        }
+
+        .terms-label {
+            color: #ccc;
+            font-size: 0.85rem;
+            line-height: 1.5;
+            font-weight: 300;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .terms-label a {
+            color: #00d4ff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .terms-label a:hover {
+            color: #0099ff;
+            text-decoration: underline;
+        }
+
+        .payment-button:disabled,
+        .submit-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            pointer-events: none;
+            box-shadow: none !important;
+        }
+
+        @media (max-width: 768px) {
+            .terms-checkbox-wrapper {
+                gap: 10px;
+            }
+
+            .terms-checkbox {
+                width: 18px;
+                height: 18px;
+                min-width: 18px;
+            }
+
+            .terms-label {
+                font-size: 0.8rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -275,7 +434,7 @@
         </div>
         
         <div class="pool-showcase">
-            <img src="swimming pool.jpeg" alt="Velocity Swimming Pool" class="pool-image">
+            <img src="swimming pool.jpeg" alt="Velocity Elite Club Premium Swimming Pool in Khurja - Clean and Well-Maintained Pool Facility" class="pool-image" loading="lazy">
         </div>
         
         <div class="booking-container">
@@ -291,7 +450,13 @@
                     <div class="feature-item">✓ Premium Facilities</div>
                     <div class="feature-item">✓ Locker & Shower</div>
                 </div>
-                <button class="payment-button" onclick="handlePoolPayment()">Proceed to Payment</button>
+                <div class="terms-agreement">
+                    <div class="terms-checkbox-wrapper">
+                        <input type="checkbox" class="terms-checkbox" id="terms-pool-payment">
+                        <label for="terms-pool-payment" class="terms-label">I have read and agree to the <a href="terms-conditions.html" target="_blank">Terms & Conditions</a></label>
+                    </div>
+                    <button class="payment-button" id="btn-pool-payment" onclick="handlePoolPayment()" disabled>Proceed to Payment</button>
+                </div>
             </div>
             
             <form class="booking-form" id="poolBookingForm">
@@ -344,7 +509,13 @@
                     </select>
                 </div>
                 
-                <button type="submit" class="submit-button">Book Pool Session</button>
+                <div class="terms-agreement">
+                    <div class="terms-checkbox-wrapper">
+                        <input type="checkbox" class="terms-checkbox" id="terms-pool-booking">
+                        <label for="terms-pool-booking" class="terms-label">I have read and agree to the <a href="terms-conditions.html" target="_blank">Terms & Conditions</a></label>
+                    </div>
+                    <button type="submit" class="submit-button" id="btn-pool-booking" disabled>Book Pool Session</button>
+                </div>
                 
                 <div class="success-message" id="poolSuccessMessage">
                     🏊 Your pool session has been booked! We'll contact you soon.
@@ -354,6 +525,26 @@
     </div>
     
     <script>
+        // Terms checkbox functionality for pool booking page
+        document.addEventListener('DOMContentLoaded', function() {
+            const checkboxPayment = document.getElementById('terms-pool-payment');
+            const buttonPayment = document.getElementById('btn-pool-payment');
+            const checkboxBooking = document.getElementById('terms-pool-booking');
+            const buttonBooking = document.getElementById('btn-pool-booking');
+
+            if (checkboxPayment && buttonPayment) {
+                checkboxPayment.addEventListener('change', function() {
+                    buttonPayment.disabled = !this.checked;
+                });
+            }
+
+            if (checkboxBooking && buttonBooking) {
+                checkboxBooking.addEventListener('change', function() {
+                    buttonBooking.disabled = !this.checked;
+                });
+            }
+        });
+
         // Pool payment button handler
         function handlePoolPayment() {
             alert('Redirecting to payment gateway... for Velocity Pool Membership');
