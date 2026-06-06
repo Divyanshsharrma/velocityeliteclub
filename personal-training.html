@@ -84,6 +84,90 @@
         ]
     }
     </script>
+    <style>
+        .terms-agreement {
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        .terms-checkbox-wrapper {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .terms-checkbox {
+            width: 20px;
+            height: 20px;
+            min-width: 20px;
+            margin-top: 2px;
+            accent-color: #00d4ff;
+            cursor: pointer;
+            border: 2px solid rgba(0, 212, 255, 0.5);
+            border-radius: 4px;
+            background: rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .terms-checkbox:hover {
+            border-color: #00d4ff;
+            box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+        }
+
+        .terms-checkbox:checked {
+            background: #00d4ff;
+            border-color: #00d4ff;
+        }
+
+        .terms-label {
+            color: #ccc;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            font-weight: 300;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .terms-label a {
+            color: #00d4ff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .terms-label a:hover {
+            color: #0099ff;
+            text-decoration: underline;
+        }
+
+        .training-payment-form form {
+            pointer-events: none;
+            opacity: 0.5;
+        }
+
+        .training-payment-form.active form {
+            pointer-events: auto;
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .terms-checkbox-wrapper {
+                gap: 10px;
+            }
+
+            .terms-checkbox {
+                width: 18px;
+                height: 18px;
+                min-width: 18px;
+            }
+
+            .terms-label {
+                font-size: 0.85rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Splash Screen -->
@@ -112,7 +196,7 @@
                     <li><a href="index.html#gym" class="nav-link">Gym</a></li>
                     <li><a href="index.html#pool" class="nav-link">Swimming Pool</a></li>
                     <li><a href="index.html#facilities" class="nav-link">Facilities</a></li>
-                    <li><a href="index.html#membership" class="nav-link">Membership</a></li>
+                    <li><a href="membership.html" class="nav-link">Membership</a></li>
                     <li><a href="personal-training.html" class="nav-link active">Personal Training</a></li>
                     <li><a href="contact.html" class="nav-link">Contact</a></li>
                 </ul>
@@ -340,9 +424,15 @@
                         </li>
                     </ul>
                     
-                    <form class="training-payment-form">
-                        <script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_SwtdHkTZgEAiGW" async></script>
-                    </form>
+                    <div class="terms-agreement">
+                        <div class="terms-checkbox-wrapper">
+                            <input type="checkbox" class="terms-checkbox" id="terms-mens">
+                            <label for="terms-mens" class="terms-label">I have read and agree to the <a href="terms-conditions.html" target="_blank">Terms & Conditions</a></label>
+                        </div>
+                        <form class="training-payment-form" id="payment-mens">
+                            <script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_SwtdHkTZgEAiGW" async></script>
+                        </form>
+                    </div>
                 </div>
             </div>
         </section>
@@ -394,12 +484,18 @@
                     
                     <p class="limited-slots-highlight">Limited Slots Available</p>
                     
-                    <form class="training-payment-form">
-                        <script src="https://checkout.razorpay.com/v1/payment-button.js"
-                        data-payment_button_id="pl_SxIJFIr9g11qwn"
-                        async>
-                        </script>
-                    </form>
+                    <div class="terms-agreement">
+                        <div class="terms-checkbox-wrapper">
+                            <input type="checkbox" class="terms-checkbox" id="terms-ladies">
+                            <label for="terms-ladies" class="terms-label">I have read and agree to the <a href="terms-conditions.html" target="_blank">Terms & Conditions</a></label>
+                        </div>
+                        <form class="training-payment-form" id="payment-ladies">
+                            <script src="https://checkout.razorpay.com/v1/payment-button.js"
+                            data-payment_button_id="pl_SxIJFIr9g11qwn"
+                            async>
+                            </script>
+                        </form>
+                    </div>
                 </div>
             </div>
         </section>
@@ -470,5 +566,29 @@
     </div>
 
     <script src="script.js"></script>
+    <script>
+        // Terms checkbox functionality for personal training page
+        document.addEventListener('DOMContentLoaded', function() {
+            const checkboxPaymentPairs = [
+                { checkbox: 'terms-mens', payment: 'payment-mens' },
+                { checkbox: 'terms-ladies', payment: 'payment-ladies' }
+            ];
+
+            checkboxPaymentPairs.forEach(pair => {
+                const checkbox = document.getElementById(pair.checkbox);
+                const paymentForm = document.getElementById(pair.payment);
+
+                if (checkbox && paymentForm) {
+                    checkbox.addEventListener('change', function() {
+                        if (this.checked) {
+                            paymentForm.classList.add('active');
+                        } else {
+                            paymentForm.classList.remove('active');
+                        }
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
