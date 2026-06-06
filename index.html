@@ -84,6 +84,90 @@
         ]
     }
     </script>
+    <style>
+        .terms-agreement {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        .terms-checkbox-wrapper {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+
+        .terms-checkbox {
+            width: 20px;
+            height: 20px;
+            min-width: 20px;
+            margin-top: 2px;
+            accent-color: #00d4ff;
+            cursor: pointer;
+            border: 2px solid rgba(0, 212, 255, 0.5);
+            border-radius: 4px;
+            background: rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .terms-checkbox:hover {
+            border-color: #00d4ff;
+            box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+        }
+
+        .terms-checkbox:checked {
+            background: #00d4ff;
+            border-color: #00d4ff;
+        }
+
+        .terms-label {
+            color: #ccc;
+            font-size: 0.85rem;
+            line-height: 1.5;
+            font-weight: 300;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .terms-label a {
+            color: #00d4ff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .terms-label a:hover {
+            color: #0099ff;
+            text-decoration: underline;
+        }
+
+        .membership-card form {
+            pointer-events: none;
+            opacity: 0.5;
+        }
+
+        .membership-card.active form {
+            pointer-events: auto;
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .terms-checkbox-wrapper {
+                gap: 10px;
+            }
+
+            .terms-checkbox {
+                width: 18px;
+                height: 18px;
+                min-width: 18px;
+            }
+
+            .terms-label {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Splash Screen -->
@@ -125,7 +209,7 @@
                     <li><a href="#pool" class="nav-link">Swimming Pool</a></li>
                     <li><a href="#facilities" class="nav-link">Facilities</a></li>
                     <li><a href="#ladies-batch" class="nav-link">Female Batch</a></li>
-                    <li><a href="#membership" class="nav-link">Membership</a></li>
+                    <li><a href="membership.html" class="nav-link">Membership</a></li>
                     <li><a href="personal-training.html" class="nav-link">Personal Training</a></li>
                     <li><a href="contact.html" class="nav-link">Contact</a></li>
                 </ul>
@@ -141,6 +225,7 @@
                 <div class="hero-buttons">
                     <button class="cta-button" onclick="window.location.href='#gym'">Explore Club</button>
                     <button class="cta-button secondary" onclick="window.location.href='#pool'">Explore Pool</button>
+                    <button class="cta-button" onclick="window.location.href='membership.html'">Explore Membership</button>
                 </div>
             </div>
             <div class="hero-bg"></div>
@@ -221,7 +306,7 @@
                         <li>24/7 Access Available</li>
                     </ul>
                     <div class="feature-buttons">
-                        <button class="cta-button secondary" onclick="window.location.href='#membership'">View Plans</button>
+                        <button class="cta-button secondary" onclick="window.location.href='membership.html'">View Plans</button>
                     </div>
                 </div>
             </div>
@@ -336,7 +421,7 @@
                     </div>
                 </div>
 
-                <button class="ladies-cta-button" onclick="location.href='personal-training.html'">Explore Female Training</button>
+                <button class="ladies-cta-button" onclick="window.location.href='personal-training.html'">Explore Female Training</button>
             </div>
         </section>
 
@@ -361,7 +446,13 @@
                             <li>Shower Access</li>
                             <li>Relaxing Atmosphere</li>
                         </ul>
-                       <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_Sw46IPIZqxJ5HO" async> </script> </form>
+                        <div class="terms-agreement">
+                            <div class="terms-checkbox-wrapper">
+                                <input type="checkbox" class="terms-checkbox" id="terms-pool">
+                                <label for="terms-pool" class="terms-label">I have read and agree to the <a href="terms-conditions.html" target="_blank">Terms & Conditions</a></label>
+                            </div>
+                            <form id="payment-pool"><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_Sw46IPIZqxJ5HO" async> </script> </form>
+                        </div>
                     </div>
                     <div class="membership-card combo-card featured">
                         <div class="membership-badge popular">BEST VALUE</div>
@@ -378,12 +469,18 @@
                             <li>Priority Booking</li>
                             <li>Nutrition + Wellness Plan</li>
                         </ul>
-                        <form>
-                            <script src="https://checkout.razorpay.com/v1/payment-button.js"
-                                data-payment_button_id="pl_Sw4KqUQAxmRnGW"
-                                async>
-                            </script>
-                        </form>
+                        <div class="terms-agreement">
+                            <div class="terms-checkbox-wrapper">
+                                <input type="checkbox" class="terms-checkbox" id="terms-combo">
+                                <label for="terms-combo" class="terms-label">I have read and agree to the <a href="terms-conditions.html" target="_blank">Terms & Conditions</a></label>
+                            </div>
+                            <form id="payment-combo">
+                                <script src="https://checkout.razorpay.com/v1/payment-button.js"
+                                    data-payment_button_id="pl_Sw4KqUQAxmRnGW"
+                                    async>
+                                </script>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -442,5 +539,30 @@
     </div>
 
     <script src="script.js"></script>
+    <script>
+        // Terms checkbox functionality for index page
+        document.addEventListener('DOMContentLoaded', function() {
+            const checkboxPaymentPairs = [
+                { checkbox: 'terms-pool', payment: 'payment-pool', card: '.pool-card' },
+                { checkbox: 'terms-combo', payment: 'payment-combo', card: '.combo-card' }
+            ];
+
+            checkboxPaymentPairs.forEach(pair => {
+                const checkbox = document.getElementById(pair.checkbox);
+                const paymentForm = document.getElementById(pair.payment);
+                const card = document.querySelector(pair.card);
+
+                if (checkbox && paymentForm && card) {
+                    checkbox.addEventListener('change', function() {
+                        if (this.checked) {
+                            card.classList.add('active');
+                        } else {
+                            card.classList.remove('active');
+                        }
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
