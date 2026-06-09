@@ -40,30 +40,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Special Offer Popup Functions
-function showPopup() {
-    const offerPopup = document.getElementById('offer-popup');
-    if (offerPopup) {
-        offerPopup.classList.add('show');
-        document.body.style.overflow = 'hidden';
-    }
-}
-
-function closePopup() {
-    const offerPopup = document.getElementById('offer-popup');
-    if (offerPopup) {
-        offerPopup.classList.remove('show');
-        document.body.style.overflow = '';
-    }
-}
-
-function redirectToOffer() {
-    closePopup();
-    setTimeout(() => {
-        window.location.href = 'special-offer.html';
-    }, 300);
-}
-
 // Scroll animations for feature sections
 function handleScrollAnimations() {
     const observerOptions = {
